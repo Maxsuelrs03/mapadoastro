@@ -5,7 +5,7 @@ import { SignSelector } from '@/components/SignSelector';
 import { LoadingScreen } from '@/components/LoadingScreen';
 import { ReadingScreen } from '@/components/ReadingScreen';
 import { UpsellFlow } from '@/components/UpsellFlow';
-import { ExitIntentPopup, useExitIntent } from '@/components/ExitIntentPopup';
+import { PremiumOfferPopup } from '@/components/PremiumOfferPopup';
 import { QuizDetails, type UserDetails } from '@/components/QuizDetails';
 import { useReadingSequence } from '@/hooks/useReadingSequence';
 import { ZODIAC } from '@/data/zodiac';
@@ -16,13 +16,11 @@ function App() {
   const [phase, setPhase] = useState<Phase>('hero');
   const [signIndex, setSignIndex] = useState<number | null>(null);
   const [details, setDetails] = useState<UserDetails | null>(null);
+  const [premiumPopupOpen, setPremiumPopupOpen] = useState(false);
 
   const { run, stepLabel, progress } = useReadingSequence(() => {
     setPhase('reading');
   });
-
-  const exitActive = phase === 'reading' || phase === 'upsell';
-  const { triggered, reset: resetExit } = useExitIntent(exitActive);
 
   const pickSign = useCallback((i: number) => {
     setSignIndex(i);
@@ -42,10 +40,16 @@ function App() {
     setPhase('hero');
     setSignIndex(null);
     setDetails(null);
-    resetExit();
-  }, [resetExit]);
+    setPremiumPopupOpen(false);
+  }, []);
 
-  const closeExit = useCallback(() => resetExit(), [resetExit]);
+  const chooseEssential = useCallback(() => {
+    setPremiumPopupOpen(true);
+  }, []);
+
+  const choosePremium = useCallback(() => {
+    setPhase('upsell');
+  }, []);
 
   return (
     <div className="relative min-h-screen w-full overflow-x-hidden">
@@ -78,7 +82,8 @@ function App() {
             <ReadingScreen
               sign={ZODIAC[signIndex]}
               details={details}
-              onComplete={() => setPhase('upsell')}
+              onChooseEssential={chooseEssential}
+              onChoosePremium={choosePremium}
             />
           </div>
         )}
@@ -91,11 +96,11 @@ function App() {
 
       </main>
 
-      <ExitIntentPopup
-        open={triggered && exitActive}
-        onClose={closeExit}
-        onAccept={() => {
-          closeExit();
+      <PremiumOfferPopup
+        open={premiumPopupOpen}
+        onClose={() => setPremiumPopupOpen(false)}
+        onBuy={() => {
+          setPremiumPopupOpen(false);
           setPhase('upsell');
         }}
         name={details?.name}
