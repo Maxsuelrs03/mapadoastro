@@ -5,6 +5,7 @@ import { SignSelector } from '@/components/SignSelector';
 import { LoadingScreen } from '@/components/LoadingScreen';
 import { ReadingScreen } from '@/components/ReadingScreen';
 import { UpsellFlow } from '@/components/UpsellFlow';
+import { ExitIntentPopup, useExitIntent } from '@/components/ExitIntentPopup';
 import { useReadingSequence } from '@/hooks/useReadingSequence';
 import { ZODIAC } from '@/data/zodiac';
 
@@ -18,6 +19,9 @@ function App() {
     setPhase('reading');
   });
 
+  const exitActive = phase === 'reading' || phase === 'upsell';
+  const { triggered, reset: resetExit } = useExitIntent(exitActive);
+
   const pickSign = useCallback(
     (i: number) => {
       setSignIndex(i);
@@ -30,7 +34,10 @@ function App() {
   const reset = useCallback(() => {
     setPhase('hero');
     setSignIndex(null);
-  }, []);
+    resetExit();
+  }, [resetExit]);
+
+  const closeExit = useCallback(() => resetExit(), [resetExit]);
 
   return (
     <div className="relative min-h-screen w-full overflow-x-hidden">
@@ -68,6 +75,15 @@ function App() {
         )}
 
       </main>
+
+      <ExitIntentPopup
+        open={triggered && exitActive}
+        onClose={closeExit}
+        onAccept={() => {
+          closeExit();
+          setPhase('upsell');
+        }}
+      />
     </div>
   );
 }
