@@ -1,18 +1,22 @@
 import { useEffect, useState } from 'react';
 import { Lock, Sparkles, Shield, Check, Heart, Coins, Moon } from 'lucide-react';
 import type { ZodiacSign } from '@/data/zodiac';
+import type { UserDetails } from '@/components/QuizDetails';
 
 interface Props {
   sign: ZodiacSign;
+  details: UserDetails | null;
   onComplete: () => void;
 }
 
 const BLOCK_ICONS = [Heart, Coins, Moon] as const;
 
-export function ReadingScreen({ sign, onComplete }: Props) {
+export function ReadingScreen({ sign, details, onComplete }: Props) {
   const [revealed, setRevealed] = useState<number>(-1); // -1 intro, 0..3 blocks, 4 offer
   const [email, setEmail] = useState('');
   const [submitted, setSubmitted] = useState(false);
+
+  const displayName = details?.name?.trim() || 'Querida';
 
   useEffect(() => {
     if (revealed >= 3) return;
@@ -72,15 +76,19 @@ export function ReadingScreen({ sign, onComplete }: Props) {
           Sua Leitura Personalizada
         </p>
         <h2 className="mt-3 text-2xl font-semibold text-cream-100">
-          Querida
+          {displayName}
         </h2>
         <p className="mt-1 text-sm text-cream-200/60">
-          Signo: {sign.name} · {sign.dates}/1985
+          Signo: {sign.name}
+          {details ? ` · ${details.age} anos` : ' · 21/03/1985'}
+          {details?.gender && details.gender !== 'Prefiro não informar'
+            ? ` · ${details.gender}`
+            : ''}
         </p>
         <p className="mt-4 text-sm leading-relaxed text-cream-200/70">
-          Seu mapa mostra uma configuração rara. Em mais de 25 anos, vi menos de
-          20 pessoas com esse alinhamento — um portal abrindo. As próximas
-          semanas são decisivas: esse ciclo só volta daqui a{' '}
+          {displayName}, seu mapa mostra uma configuração rara. Em mais de 25
+          anos, vi menos de 20 pessoas com esse alinhamento — um portal abrindo.
+          As próximas semanas são decisivas: esse ciclo só volta daqui a{' '}
           <span className="text-gold-300">9 anos</span>.
         </p>
       </div>

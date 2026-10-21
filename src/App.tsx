@@ -6,14 +6,16 @@ import { LoadingScreen } from '@/components/LoadingScreen';
 import { ReadingScreen } from '@/components/ReadingScreen';
 import { UpsellFlow } from '@/components/UpsellFlow';
 import { ExitIntentPopup, useExitIntent } from '@/components/ExitIntentPopup';
+import { QuizDetails, type UserDetails } from '@/components/QuizDetails';
 import { useReadingSequence } from '@/hooks/useReadingSequence';
 import { ZODIAC } from '@/data/zodiac';
 
-type Phase = 'hero' | 'loading' | 'reading' | 'upsell';
+type Phase = 'hero' | 'details' | 'loading' | 'reading' | 'upsell';
 
 function App() {
   const [phase, setPhase] = useState<Phase>('hero');
   const [signIndex, setSignIndex] = useState<number | null>(null);
+  const [details, setDetails] = useState<UserDetails | null>(null);
 
   const { run, stepLabel, progress } = useReadingSequence(() => {
     setPhase('reading');
@@ -22,9 +24,14 @@ function App() {
   const exitActive = phase === 'reading' || phase === 'upsell';
   const { triggered, reset: resetExit } = useExitIntent(exitActive);
 
-  const pickSign = useCallback(
-    (i: number) => {
-      setSignIndex(i);
+  const pickSign = useCallback((i: number) => {
+    setSignIndex(i);
+    setPhase('details');
+  }, []);
+
+  const submitDetails = useCallback(
+    (d: UserDetails) => {
+      setDetails(d);
       setPhase('loading');
       run();
     },
@@ -34,6 +41,7 @@ function App() {
   const reset = useCallback(() => {
     setPhase('hero');
     setSignIndex(null);
+    setDetails(null);
     resetExit();
   }, [resetExit]);
 
@@ -53,9 +61,15 @@ function App() {
           </div>
         )}
 
+        {phase === 'details' && signIndex !== null && (
+          <div className="flex w-full flex-1 flex-col items-center justify-center py-16">
+            <QuizDetails sign={ZODIAC[signIndex]} onSubmit={submitDetails} />
+          </div>
+        )}
+
         {phase === 'loading' && (
           <div className="flex w-full flex-1 items-center justify-center py-24">
-            <LoadingScreen stepLabel={stepLabel} progress={progress} />
+            <LoadingScreen stepLabel={stepLabel} progress={progress} name={details?.name} />
           </div>
         )}
 
@@ -63,6 +77,7 @@ function App() {
           <div className="flex w-full flex-1 flex-col items-center justify-center py-16">
             <ReadingScreen
               sign={ZODIAC[signIndex]}
+              details={details}
               onComplete={() => setPhase('upsell')}
             />
           </div>
@@ -70,7 +85,7 @@ function App() {
 
         {phase === 'upsell' && (
           <div className="flex w-full flex-1 items-center justify-center py-20">
-            <UpsellFlow onDone={reset} />
+            <UpsellFlow onDone={reset} name={details?.name} />
           </div>
         )}
 
@@ -83,6 +98,7 @@ function App() {
           closeExit();
           setPhase('upsell');
         }}
+        name={details?.name}
       />
     </div>
   );

@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 interface Props {
   stepLabel: string;
   progress: number; // 0..1
+  name?: string;
 }
 
 const PHASES = [
@@ -12,7 +13,7 @@ const PHASES = [
   'Decodificando os 3 bloqueios que travam sua vida…',
 ];
 
-export function LoadingScreen({ stepLabel, progress }: Props) {
+export function LoadingScreen({ stepLabel, progress, name }: Props) {
   const [dots, setDots] = useState('');
 
   useEffect(() => {
@@ -54,9 +55,9 @@ export function LoadingScreen({ stepLabel, progress }: Props) {
       </h2>
 
       <p className="mt-3 text-sm leading-relaxed text-cream-200/60">
-        Não feche esta página. Estou cruzando o seu signo com o minuto exato em
-        que você nasceu. Em instantes, aqui embaixo, você vê o que está travando{' '}
-        <span className="text-gold-300">a sua vida</span>.
+        Não feche esta página{name ? `, ${name}` : ''}. Estou cruzando o seu
+        signo com o minuto exato em que você nasceu. Em instantes, aqui embaixo,
+        você vê o que está travando <span className="text-gold-300">a sua vida</span>.
       </p>
 
       <div className="mt-8 h-1 w-full overflow-hidden rounded-full bg-white/10">

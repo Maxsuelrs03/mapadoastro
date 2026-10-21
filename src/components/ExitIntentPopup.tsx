@@ -5,9 +5,10 @@ interface Props {
   open: boolean;
   onClose: () => void;
   onAccept: () => void;
+  name?: string;
 }
 
-export function ExitIntentPopup({ open, onClose, onAccept }: Props) {
+export function ExitIntentPopup({ open, onClose, onAccept, name }: Props) {
   const [leaving, setLeaving] = useState(false);
 
   useEffect(() => {
@@ -51,7 +52,7 @@ export function ExitIntentPopup({ open, onClose, onAccept }: Props) {
         </div>
 
         <p className="mt-4 text-[10px] font-semibold uppercase tracking-[0.25em] text-gold-300/70">
-          Espere, Querida — não vá ainda
+          Espere{name ? `, ${name}` : ', Querida'} — não vá ainda
         </p>
 
         <h2 className="mt-3 text-2xl font-semibold leading-tight text-cream-100">

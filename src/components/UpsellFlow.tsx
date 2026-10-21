@@ -3,10 +3,12 @@ import { Sparkles, Check, Calendar, Star } from 'lucide-react';
 
 interface Props {
   onDone: () => void;
+  name?: string;
 }
 
-export function UpsellFlow({ onDone }: Props) {
+export function UpsellFlow({ onDone, name }: Props) {
   const [stage, setStage] = useState<'bump' | 'cross' | 'done'>('bump');
+  const displayName = name?.trim() || 'Querida';
 
   if (stage === 'done') {
     return (
@@ -19,7 +21,7 @@ export function UpsellFlow({ onDone }: Props) {
         </h2>
         <p className="mt-3 text-sm leading-relaxed text-cream-200/70">
           Enviamos tudo para o seu e-mail. O universo alinhou cada detalhe para
-          este momento — agora é com você. Boa jornada, Querida.
+          este momento — agora é com você. Boa jornada, {displayName}.
         </p>
         <button
           onClick={onDone}
