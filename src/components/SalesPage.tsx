@@ -1,10 +1,9 @@
-import { Shield, Check, Sparkles, BookOpen, Quote } from 'lucide-react';
+import { Shield, Check, Sparkles, BookOpen } from 'lucide-react';
 import type { UserDetails } from '@/components/QuizDetails';
-import type { QuizAnswers } from '@/components/FollowUpQuestions';
 
 interface Props {
   details: UserDetails | null;
-  answers: QuizAnswers | null;
+  perspective: string | null;
   onChooseEssential: () => void;
   onChoosePremium: () => void;
 }
@@ -26,24 +25,8 @@ const PREMIUM_BONUSES = [
   'Áudios de reflexão e meditação',
 ];
 
-const ILLUSTRATIVE_SCENARIOS = [
-  {
-    title: 'Quando o relacionamento pesa',
-    text: 'Situações comuns em que a pessoa sente que carrega o relacionamento nas costas e não entende por que o padrão se repete. A leitura ajuda a nomear o bloqueio e abrir espaço para mudança.',
-  },
-  {
-    title: 'Quando o dinheiro entra e sai',
-    text: 'O cenário em que o esforço existe, mas a fartura não chega. O guia prático propõe reflexões sobre crenças e hábitos que podem estar no caminho.',
-  },
-  {
-    title: 'Quando a mente não desliga',
-    text: 'A sensação de estar sempre acelerado, sem conseguir descansar de verdade. Os áudios de reflexão oferecem um momento de pausa e reorientação.',
-  },
-];
-
-export function SalesPage({ details, answers, onChooseEssential, onChoosePremium }: Props) {
+export function SalesPage({ details, perspective, onChooseEssential, onChoosePremium }: Props) {
   const displayName = details?.name?.trim() || 'Querida';
-  const focusArea = answers?.focusArea;
 
   return (
     <div className="mx-auto w-full max-w-2xl px-5">
@@ -55,10 +38,10 @@ export function SalesPage({ details, answers, onChooseEssential, onChoosePremium
         <h1 className="mt-5 text-2xl font-semibold text-cream-100 sm:text-3xl">
           {displayName}, sua jornada começa aqui
         </h1>
-        {focusArea && (
+        {perspective && (
           <p className="mx-auto mt-3 max-w-lg text-sm leading-relaxed text-cream-200/70">
-            Você disse que deseja compreender mais sobre{' '}
-            <span className="text-gold-300">{focusArea.toLowerCase()}</span>.
+            Você disse que gostaria de encontrar uma nova perspectiva em{' '}
+            <span className="text-gold-300">{perspective.toLowerCase()}</span>.
             O material a seguir foi organizado para apoiar você exatamente
             nesse caminho.
           </p>
@@ -78,37 +61,7 @@ export function SalesPage({ details, answers, onChooseEssential, onChoosePremium
         </p>
       </section>
 
-      {/* 3. Histórias e depoimentos (editorial, ilustrativo) */}
-      <section className="mt-10">
-        <h2 className="text-center text-lg font-semibold text-cream-100 sm:text-xl">
-          Situações que talvez você reconheça
-        </h2>
-        <p className="mt-1 text-center text-xs text-cream-200/40">
-          Conteúdo ilustrativo — não são relatos de clientes reais.
-        </p>
-        <div className="mt-5 space-y-4">
-          {ILLUSTRATIVE_SCENARIOS.map((s) => (
-            <div
-              key={s.title}
-              className="rounded-2xl border border-gold-400/15 bg-gradient-to-b from-white/[0.04] to-transparent p-5"
-            >
-              <div className="flex items-start gap-3">
-                <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-gold-400/10">
-                  <Quote className="h-3.5 w-3.5 text-gold-300" />
-                </span>
-                <div>
-                  <h3 className="text-sm font-semibold text-cream-100">{s.title}</h3>
-                  <p className="mt-1.5 text-xs leading-relaxed text-cream-200/65">
-                    {s.text}
-                  </p>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* 4. Benefícios e entregáveis */}
+      {/* 3. Benefícios e entregáveis */}
       <section className="mt-10">
         <h2 className="text-center text-lg font-semibold text-cream-100 sm:text-xl">
           O que você recebe
@@ -150,7 +103,7 @@ export function SalesPage({ details, answers, onChooseEssential, onChoosePremium
         </div>
       </section>
 
-      {/* 5. Planos e preços */}
+      {/* 4. Planos e preços */}
       <section className="mt-10">
         <h2 className="text-center text-lg font-semibold text-cream-100 sm:text-xl">
           Escolha seu plano
@@ -243,7 +196,7 @@ export function SalesPage({ details, answers, onChooseEssential, onChoosePremium
         </div>
       </section>
 
-      {/* 6. Garantia e informações de compra */}
+      {/* 5. Garantia e informações de compra */}
       <section className="mt-8 rounded-2xl border border-white/10 bg-white/[0.03] p-5 text-center">
         <Shield className="mx-auto h-6 w-6 text-gold-300/70" />
         <h3 className="mt-3 text-sm font-semibold text-cream-100">
@@ -255,7 +208,7 @@ export function SalesPage({ details, answers, onChooseEssential, onChoosePremium
         </p>
       </section>
 
-      {/* 7. Chamada para ação final */}
+      {/* 6. Chamada para ação final */}
       <section className="mt-8 pb-4 text-center">
         <p className="text-sm text-cream-200/60">
           {displayName}, escolha o plano que faz sentido para você agora.

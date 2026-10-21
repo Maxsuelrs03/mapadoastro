@@ -4,7 +4,6 @@ import { Hero } from '@/components/Hero';
 import { SignSelector } from '@/components/SignSelector';
 import { LoadingScreen } from '@/components/LoadingScreen';
 import { ReadingScreen } from '@/components/ReadingScreen';
-import { FollowUpQuestions, type QuizAnswers } from '@/components/FollowUpQuestions';
 import { SalesPage } from '@/components/SalesPage';
 import { UpsellFlow } from '@/components/UpsellFlow';
 import { PremiumOfferPopup } from '@/components/PremiumOfferPopup';
@@ -12,13 +11,13 @@ import { QuizDetails, type UserDetails } from '@/components/QuizDetails';
 import { useReadingSequence } from '@/hooks/useReadingSequence';
 import { ZODIAC } from '@/data/zodiac';
 
-type Phase = 'hero' | 'details' | 'loading' | 'reading' | 'followup' | 'sales' | 'upsell';
+type Phase = 'hero' | 'details' | 'loading' | 'reading' | 'sales' | 'upsell';
 
 function App() {
   const [phase, setPhase] = useState<Phase>('hero');
   const [signIndex, setSignIndex] = useState<number | null>(null);
   const [details, setDetails] = useState<UserDetails | null>(null);
-  const [answers, setAnswers] = useState<QuizAnswers | null>(null);
+  const [perspective, setPerspective] = useState<string | null>(null);
   const [premiumPopupOpen, setPremiumPopupOpen] = useState(false);
 
   const { run, stepLabel, progress } = useReadingSequence(() => {
@@ -39,16 +38,11 @@ function App() {
     [run]
   );
 
-  const completeFollowUp = useCallback((a: QuizAnswers) => {
-    setAnswers(a);
-    setPhase('sales');
-  }, []);
-
   const reset = useCallback(() => {
     setPhase('hero');
     setSignIndex(null);
     setDetails(null);
-    setAnswers(null);
+    setPerspective(null);
     setPremiumPopupOpen(false);
   }, []);
 
@@ -91,16 +85,10 @@ function App() {
             <ReadingScreen
               sign={ZODIAC[signIndex]}
               details={details}
-              onContinue={() => setPhase('followup')}
-            />
-          </div>
-        )}
-
-        {phase === 'followup' && (
-          <div className="flex w-full flex-1 flex-col items-center justify-center py-16">
-            <FollowUpQuestions
-              name={details?.name}
-              onComplete={completeFollowUp}
+              onContinue={(p) => {
+                setPerspective(p);
+                setPhase('sales');
+              }}
             />
           </div>
         )}
@@ -109,7 +97,7 @@ function App() {
           <div className="flex w-full flex-1 flex-col items-center justify-center py-16">
             <SalesPage
               details={details}
-              answers={answers}
+              perspective={perspective}
               onChooseEssential={chooseEssential}
               onChoosePremium={choosePremium}
             />
