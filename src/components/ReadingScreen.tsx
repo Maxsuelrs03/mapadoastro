@@ -37,7 +37,8 @@ const STORIES = [
   },
 ];
 
-export function ReadingScreen({ sign, onContinue }: Props) {
+export function ReadingScreen({ sign, details, onContinue }: Props) {
+  const displayName = details?.name?.trim() || 'Sua leitura';
   const [revealed, setRevealed] = useState<number>(0); // 0..2 blocks
   const [perspective, setPerspective] = useState<string>('');
 
@@ -85,10 +86,16 @@ export function ReadingScreen({ sign, onContinue }: Props) {
       {revealed >= 0 && (
         <>
           <div className="mb-5 text-center">
+            <p className="mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-gold-300/75">
+              Leitura personalizada para {displayName}
+            </p>
             <h2 className="text-xl font-semibold text-cream-100 sm:text-2xl">
-              Os 3 bloqueios do seu mapa
+              {displayName}, vamos explorar os 3 bloqueios do seu mapa
             </h2>
-            <p className="mt-1 text-sm text-cream-200/50">
+            <p className="mt-2 text-sm leading-relaxed text-cream-200/60">
+              Esta é uma leitura simbólica para ajudar você a refletir sobre possíveis padrões e novas perspectivas.
+            </p>
+            <p className="mt-2 text-xs text-cream-200/50">
               {sign.name} · regido por {sign.ruling} · elemento {sign.element}
             </p>
           </div>
@@ -101,7 +108,10 @@ export function ReadingScreen({ sign, onContinue }: Props) {
         <div className="mt-10 animate-fade-up space-y-8">
           {/* Stories section */}
           <section>
-            <h2 className="text-xl font-semibold text-cream-100 sm:text-2xl">
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-gold-300/75">
+              {displayName}, uma nova perspectiva começa com uma pergunta
+            </p>
+            <h2 className="mt-2 text-xl font-semibold text-cream-100 sm:text-2xl">
               Quando as cartas ajudam você a enxergar uma situação de outro jeito
             </h2>
             <p className="mt-2 text-sm leading-relaxed text-cream-200/60">
