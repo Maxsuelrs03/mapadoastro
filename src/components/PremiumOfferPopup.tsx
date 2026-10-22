@@ -5,6 +5,7 @@ interface Props {
   open: boolean;
   onClose: () => void;
   onBuy: () => void;
+  onDecline: () => void;
   name?: string;
 }
 
@@ -22,7 +23,7 @@ const PREMIUM_BONUSES = [
   'Áudios de reflexão e meditação',
 ];
 
-export function PremiumOfferPopup({ open, onClose, onBuy, name }: Props) {
+export function PremiumOfferPopup({ open, onClose, onBuy, onDecline, name }: Props) {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
@@ -121,7 +122,7 @@ export function PremiumOfferPopup({ open, onClose, onBuy, name }: Props) {
             <Shield className="h-3 w-3 text-gold-300/70" /> Garantia de 7 dias
           </div>
           <button
-            onClick={onClose}
+            onClick={onDecline}
             className="mt-2 w-full text-center text-[11px] text-cream-200/35 underline-offset-2 hover:underline"
           >
             Não, prefiro o Essencial

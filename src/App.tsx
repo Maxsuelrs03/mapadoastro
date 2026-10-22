@@ -10,6 +10,7 @@ import { PremiumOfferPopup } from '@/components/PremiumOfferPopup';
 import { QuizDetails, type UserDetails } from '@/components/QuizDetails';
 import { useReadingSequence } from '@/hooks/useReadingSequence';
 import { ZODIAC } from '@/data/zodiac';
+import { CHECKOUT_LINKS, goToCheckout } from '@/data/checkoutLinks';
 
 type Phase = 'hero' | 'details' | 'loading' | 'reading' | 'sales' | 'upsell';
 
@@ -51,7 +52,7 @@ function App() {
   }, []);
 
   const choosePremium = useCallback(() => {
-    setPhase('upsell');
+    goToCheckout(CHECKOUT_LINKS.premium);
   }, []);
 
   return (
@@ -115,9 +116,13 @@ function App() {
       <PremiumOfferPopup
         open={premiumPopupOpen}
         onClose={() => setPremiumPopupOpen(false)}
+        onDecline={() => {
+          setPremiumPopupOpen(false);
+          goToCheckout(CHECKOUT_LINKS.essencial);
+        }}
         onBuy={() => {
           setPremiumPopupOpen(false);
-          setPhase('upsell');
+          goToCheckout(CHECKOUT_LINKS.condicaoEspecial);
         }}
         name={details?.name}
       />
