@@ -37,18 +37,12 @@ const STORIES = [
   },
 ];
 
-export function ReadingScreen({ sign, details, onContinue }: Props) {
-  const [revealed, setRevealed] = useState<number>(-1); // -1 intro, 0..2 blocks
+export function ReadingScreen({ sign, onContinue }: Props) {
+  const [revealed, setRevealed] = useState<number>(0); // 0..2 blocks
   const [perspective, setPerspective] = useState<string>('');
-
-  const displayName = details?.name?.trim() || 'Querida';
 
   useEffect(() => {
     if (revealed >= 2) return;
-    if (revealed === -1) {
-      const t = window.setTimeout(() => setRevealed(0), 1800);
-      return () => clearTimeout(t);
-    }
     if (revealed < 2) {
       const t = window.setTimeout(() => setRevealed((r) => r + 1), 2100);
       return () => clearTimeout(t);
@@ -87,34 +81,6 @@ export function ReadingScreen({ sign, details, onContinue }: Props) {
 
   return (
     <div className="mx-auto w-full max-w-2xl px-4 sm:px-5">
-      {/* Intro card — fixed overflow, no generic claims */}
-      <div
-        className={`rounded-3xl border border-gold-400/20 bg-gradient-to-b from-gold-400/[0.08] to-transparent p-5 text-center transition-opacity duration-700 sm:p-8 ${
-          revealed === -1 ? 'opacity-100' : 'opacity-0'
-        }`}
-        style={{ display: revealed === -1 ? 'block' : 'none' }}
-      >
-        <p className="text-xs uppercase tracking-[0.25em] text-gold-300/70">
-          Sua Leitura Personalizada
-        </p>
-        <h2 className="mt-3 text-2xl font-semibold text-cream-100">
-          {displayName}
-        </h2>
-        <p className="mt-1 text-sm text-cream-200/60">
-          Signo: {sign.name}
-          {details ? ` · ${details.age} anos` : ''}
-          {details?.gender && details.gender !== 'Prefiro não informar'
-            ? ` · ${details.gender}`
-            : ''}
-        </p>
-        <p className="mt-4 text-sm leading-relaxed text-cream-200/70">
-          {displayName}, a leitura a seguir usa o simbolismo do seu signo para
-          abrir reflexões sobre padrões que podem estar presentes na sua vida
-          agora. Não é uma previsão — é um convite para enxergar sua situação
-          de outro jeito.
-        </p>
-      </div>
-
       {/* Blocks */}
       {revealed >= 0 && (
         <>
