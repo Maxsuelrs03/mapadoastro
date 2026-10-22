@@ -208,26 +208,6 @@ export function SalesPage({ details, perspective, onChooseEssential, onChoosePre
         </p>
       </section>
 
-      {/* 6. Chamada para ação final */}
-      <section className="mt-8 pb-4 text-center">
-        <p className="text-sm text-cream-200/60">
-          {displayName}, escolha o plano que faz sentido para você agora.
-        </p>
-        <div className="mt-4 flex flex-col gap-3 sm:flex-row sm:justify-center">
-          <button
-            onClick={onChooseEssential}
-            className="rounded-xl border border-gold-400/40 bg-gold-400/10 px-6 py-3.5 text-sm font-bold text-gold-200 transition-colors hover:bg-gold-400/20"
-          >
-            Adquirir Essencial — R$17,90
-          </button>
-          <button
-            onClick={onChoosePremium}
-            className="rounded-xl bg-gradient-to-r from-gold-500 to-gold-300 px-6 py-3.5 text-sm font-bold text-midnight-900 shadow-lg transition-transform hover:scale-[1.02] active:scale-[0.98]"
-          >
-            Escolher Premium — R$37,90
-          </button>
-        </div>
-      </section>
     </div>
   );
 }
