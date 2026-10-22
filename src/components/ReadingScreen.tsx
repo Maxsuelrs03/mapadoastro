@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Heart, Coins, Moon, ArrowRight, ExternalLink, Compass } from 'lucide-react';
+import { Heart, Coins, Moon, ArrowRight, Compass } from 'lucide-react';
 import type { ZodiacSign } from '@/data/zodiac';
 import type { UserDetails } from '@/components/QuizDetails';
 
@@ -16,25 +16,6 @@ const PERSPECTIVE_OPTIONS = [
   'Autoconhecimento',
   'Decisões e novos caminhos',
   'Propósito e próximos passos',
-];
-
-const STORIES = [
-  {
-    source: 'Universa/UOL · 22 de maio de 2024',
-    title: 'Um relacionamento que precisava ser revisto',
-    summary:
-      'Em uma reportagem da Universa, Luanna Alessandra Ribeiro relatou que, durante uma leitura de cartas, conseguiu enxergar aspectos dolorosos de um relacionamento que até então não havia enfrentado. Ela contou que a experiência a ajudou a refletir sobre a situação e a encontrar coragem para seguir em frente — não porque as cartas previram o futuro, mas porque funcionaram como um espelho para algo que ela já sentia.',
-    linkLabel: 'Ler a história publicada na Universa',
-    url: 'https://www.uol.com.br/universa/noticias/redacao/2024/05/22/leitura-do-taro-me-ajudou-a-sair-de-relacao-abusiva-e-encontrar-o-amor.htm',
-  },
-  {
-    source: 'The Guardian · entrevista com Jessica Dore',
-    title: 'Cartas como ferramenta de reflexão',
-    summary:
-      'Em entrevista ao The Guardian, Jessica Dore — leitora de tarô, assistente social e autora — descreve o uso das cartas como uma forma de explorar sentimentos e considerar novas perspectivas diante de momentos difíceis. Para ela, as cartas não oferecem respostas infalíveis: funcionam como um ponto de partida para a reflexão, ajudando a pessoa a nomear o que sente e a olhar para a própria situação de outro jeito.',
-    linkLabel: 'Conhecer essa experiência',
-    url: 'https://www.theguardian.com/lifeandstyle/2021/oct/27/tarot-cards-self-care-jessica-dore-interview',
-  },
 ];
 
 export function ReadingScreen({ sign, details, onContinue }: Props) {
@@ -106,51 +87,6 @@ export function ReadingScreen({ sign, details, onContinue }: Props) {
       {/* Stories + perspective question — shown after blocks are visible */}
       {allBlocksVisible && (
         <div className="mt-10 animate-fade-up space-y-8">
-          {/* Stories section */}
-          <section>
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-gold-300/75">
-              {displayName}, uma nova perspectiva começa com uma pergunta
-            </p>
-            <h2 className="mt-2 text-xl font-semibold text-cream-100 sm:text-2xl">
-              Quando as cartas ajudam você a enxergar uma situação de outro jeito
-            </h2>
-            <p className="mt-2 text-sm leading-relaxed text-cream-200/60">
-              Para algumas pessoas, o tarô funciona como um instrumento
-              simbólico de reflexão e autoconhecimento — uma forma de
-              considerar diferentes perspectivas sobre a própria vida. As
-              histórias abaixo foram publicadas por fontes externas, não são
-              depoimentos de compradores do Mapa do Astro.
-            </p>
-
-            <div className="mt-5 space-y-4">
-              {STORIES.map((s) => (
-                <article
-                  key={s.url}
-                  className="rounded-2xl border border-gold-400/15 bg-gradient-to-b from-white/[0.04] to-transparent p-4 sm:p-5"
-                >
-                  <p className="text-[10px] uppercase tracking-[0.2em] text-gold-300/60">
-                    {s.source}
-                  </p>
-                  <h3 className="mt-2 text-sm font-semibold text-cream-100 sm:text-base">
-                    {s.title}
-                  </h3>
-                  <p className="mt-2 text-xs leading-relaxed text-cream-200/65 sm:text-sm">
-                    {s.summary}
-                  </p>
-                  <a
-                    href={s.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="mt-3 inline-flex items-center gap-1.5 text-xs font-medium text-gold-300/80 underline-offset-4 hover:text-gold-200 hover:underline"
-                  >
-                    {s.linkLabel}
-                    <ExternalLink className="h-3 w-3" />
-                  </a>
-                </article>
-              ))}
-            </div>
-          </section>
-
           {/* Perspective question */}
           <section className="rounded-2xl border border-gold-400/20 bg-gold-400/[0.04] p-5 sm:p-6">
             <div className="mb-4 text-center">
