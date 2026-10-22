@@ -13,6 +13,14 @@ interface Props {
   onSubmit: (details: UserDetails) => void;
 }
 
+// Mantém o campo visível acima do teclado no celular (espera o teclado abrir)
+const keepFieldVisible = (e: React.FocusEvent<HTMLInputElement>) => {
+  const field = e.currentTarget;
+  window.setTimeout(() => {
+    field.scrollIntoView({ block: 'center', behavior: 'smooth' });
+  }, 300);
+};
+
 const GENDER_OPTIONS: UserDetails['gender'][] = [
   'Feminino',
   'Masculino',
@@ -68,10 +76,11 @@ export function QuizDetails({ sign, onSubmit }: Props) {
             type="text"
             value={name}
             onChange={(e) => setName(e.target.value)}
+            onFocus={keepFieldVisible}
             onBlur={() => setTouched(true)}
             placeholder="Digite seu primeiro nome"
             maxLength={40}
-            className="w-full rounded-xl border border-white/15 bg-midnight-800/60 px-4 py-3 text-sm text-cream-100 placeholder:text-cream-200/30 focus:border-gold-400/50 focus:outline-none focus:ring-2 focus:ring-gold-400/20"
+            className="w-full rounded-xl border border-white/15 bg-midnight-800/60 px-4 py-3 text-base text-cream-100 placeholder:text-cream-200/30 focus:border-gold-400/50 focus:outline-none focus:ring-2 focus:ring-gold-400/20"
           />
           {touched && !nameValid && (
             <p className="mt-1.5 text-xs text-red-300/80">
@@ -93,9 +102,10 @@ export function QuizDetails({ sign, onSubmit }: Props) {
             max={100}
             value={age}
             onChange={(e) => setAge(e.target.value)}
+            onFocus={keepFieldVisible}
             onBlur={() => setTouched(true)}
             placeholder="Entre 18 e 100 anos"
-            className="w-full rounded-xl border border-white/15 bg-midnight-800/60 px-4 py-3 text-sm text-cream-100 placeholder:text-cream-200/30 focus:border-gold-400/50 focus:outline-none focus:ring-2 focus:ring-gold-400/20"
+            className="w-full rounded-xl border border-white/15 bg-midnight-800/60 px-4 py-3 text-base text-cream-100 placeholder:text-cream-200/30 focus:border-gold-400/50 focus:outline-none focus:ring-2 focus:ring-gold-400/20"
           />
           {touched && age !== '' && !ageValid && (
             <p className="mt-1.5 text-xs text-red-300/80">
