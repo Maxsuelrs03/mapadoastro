@@ -128,7 +128,7 @@ export function SalesPage({ details, perspective, onChooseEssential, onChoosePre
         <div className="p-5 sm:p-7">
           <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-gold-300/80">Demonstração de leitura</p>
           <h2 className="mt-2 text-xl font-semibold text-cream-100 sm:text-2xl">{displayName}, veja como uma leitura pode ser apresentada</h2>
-          <p className="mt-2 text-sm leading-relaxed text-cream-200/65">Esta demonstração usa uma personagem fictícia e mostra o formato da interpretação, não uma previsão individual feita a partir dos seus dados.</p>
+          <p className="mt-2 text-sm leading-relaxed text-cream-200/65">Veja um exemplo do formato e da linguagem usados na leitura.</p>
           <div className="mt-5 space-y-4">
             <div><h3 className="text-sm font-semibold text-gold-200">01 · A Lua — o que pede clareza</h3><p className="mt-1 text-xs leading-relaxed text-cream-200/70">Simboliza dúvidas e informações incompletas. A reflexão é separar fatos, receios e suposições antes de tirar conclusões.</p></div>
             <div><h3 className="text-sm font-semibold text-gold-200">02 · O Enforcado — outra perspectiva</h3><p className="mt-1 text-xs leading-relaxed text-cream-200/70">Convida a pausar e observar o que talvez esteja sendo visto sempre do mesmo jeito.</p></div>
@@ -139,19 +139,19 @@ export function SalesPage({ details, perspective, onChooseEssential, onChoosePre
 
       <section className="mt-12">
         <div className="text-center">
-          <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-gold-300/80">O que esperar da experiência</p>
+          <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-gold-300/80">Exemplos da experiência</p>
           <h2 className="mt-2 text-2xl font-semibold text-cream-100 sm:text-3xl">Uma experiência feita para olhar para dentro</h2>
           <div className="mx-auto mt-4 flex w-fit items-center gap-2 rounded-xl border border-gold-400/20 bg-white/[0.03] px-4 py-3">
             <Stars /><strong className="text-sm text-cream-100">4,5/5</strong>
           </div>
-          <p className="mt-2 text-[10px] text-cream-200/45">Avaliação visual demonstrativa, não baseada em pesquisa de clientes.</p>
+          <p className="mt-2 text-[10px] text-cream-200/45">Nota ilustrativa; ainda não representa uma avaliação real de clientes.</p>
         </div>
         <div className="mt-5 grid gap-3 sm:grid-cols-3">
           {[
             { name: 'Mariana S.', age: '28 anos · São Paulo', quote: 'A leitura me ajudou a organizar perguntas que eu vinha evitando e a pensar no que realmente precisava conversar.' },
             { name: 'Camila R.', age: '32 anos · Salvador', quote: 'A demonstração mostra como as cartas podem servir de ponto de partida para refletir sobre padrões e escolhas.' },
             { name: 'Rafael L.', age: '26 anos · Belo Horizonte', quote: 'O formato em etapas deixa a interpretação mais fácil de acompanhar e consultar.' },
-          ].map((person) => <article key={person.name} className="rounded-2xl border border-white/10 bg-white/[0.025] p-4"><div className="flex items-center gap-3"><div className="flex h-11 w-11 items-center justify-center rounded-full border border-gold-400/40 bg-gradient-to-br from-[#6b453b] to-[#211624] text-sm font-semibold text-cream-100">{person.name.split(' ').map((s) => s[0]).join('').replace('.', '')}</div><div><p className="text-sm font-semibold text-cream-100">{person.name}</p><p className="text-[10px] text-cream-200/50">{person.age}</p></div></div><div className="mt-3"><Stars /></div><p className="mt-3 text-sm leading-relaxed text-cream-200/75">“{person.quote}”</p><p className="mt-3 text-[9px] text-cream-200/40">Personagem fictício para demonstrar o layout.</p></article>)}
+          ].map((person) => <article key={person.name} className="rounded-2xl border border-white/10 bg-white/[0.025] p-4"><div className="flex items-center gap-3"><div className="flex h-11 w-11 items-center justify-center rounded-full border border-gold-400/40 bg-gradient-to-br from-[#6b453b] to-[#211624] text-sm font-semibold text-cream-100">{person.name.split(' ').map((s) => s[0]).join('').replace('.', '')}</div><div><p className="text-sm font-semibold text-cream-100">{person.name}</p><p className="text-[10px] text-cream-200/50">{person.age}</p></div></div><div className="mt-3"><Stars /></div><p className="mt-3 text-sm leading-relaxed text-cream-200/75">“{person.quote}”</p></article>)}
         </div>
       </section>
 
