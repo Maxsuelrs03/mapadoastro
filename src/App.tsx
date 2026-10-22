@@ -1,4 +1,4 @@
-import { useCallback, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { Starfield } from '@/components/Starfield';
 import { Hero } from '@/components/Hero';
 import { SignSelector } from '@/components/SignSelector';
@@ -20,6 +20,11 @@ function App() {
   const [details, setDetails] = useState<UserDetails | null>(null);
   const [perspective, setPerspective] = useState<string | null>(null);
   const [premiumPopupOpen, setPremiumPopupOpen] = useState(false);
+
+  // Volta para o topo sempre que o usuário muda de etapa
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+  }, [phase]);
 
   const { run, stepLabel, progress } = useReadingSequence(() => {
     setPhase('reading');
