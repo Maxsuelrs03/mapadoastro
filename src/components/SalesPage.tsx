@@ -61,6 +61,48 @@ export function SalesPage({ details, perspective, onChooseEssential, onChoosePre
         </p>
       </section>
 
+      {/* 3. Exemplos ilustrativos de reflexão — não são depoimentos reais */}
+      <section className="mt-10">
+        <div className="text-center">
+          <p className="text-xs font-semibold uppercase tracking-[0.22em] text-gold-300/80">
+            Possibilidades de reflexão
+          </p>
+          <h2 className="mt-2 text-xl font-semibold text-cream-100 sm:text-2xl">
+            O que pode mudar quando você olha para a situação por outro ângulo?
+          </h2>
+          <p className="mx-auto mt-3 max-w-lg text-sm leading-relaxed text-cream-200/65">
+            O tarô não decide por você nem garante acontecimentos. Ele pode servir como ponto de partida para organizar sentimentos, reconhecer padrões e pensar nos próximos passos.
+          </p>
+        </div>
+
+        <div className="mt-5 grid gap-3">
+          <article className="rounded-2xl border border-white/10 bg-white/[0.03] p-5">
+            <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-gold-300/80">Exemplo ilustrativo · Relacionamentos</p>
+            <h3 className="mt-2 text-base font-semibold text-cream-100">Entender o que você realmente precisa</h3>
+            <p className="mt-2 text-sm leading-relaxed text-cream-200/70">
+              Ao refletir sobre uma relação, alguém pode perceber que está deixando suas próprias necessidades de lado e começar a pensar em limites e conversas mais honestas.
+            </p>
+          </article>
+          <article className="rounded-2xl border border-white/10 bg-white/[0.03] p-5">
+            <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-gold-300/80">Exemplo ilustrativo · Decisões</p>
+            <h3 className="mt-2 text-base font-semibold text-cream-100">Separar medo de vontade</h3>
+            <p className="mt-2 text-sm leading-relaxed text-cream-200/70">
+              Diante de uma escolha difícil, usar perguntas guiadas pode ajudar a nomear receios, comparar alternativas e decidir com mais consciência — sem terceirizar a decisão às cartas.
+            </p>
+          </article>
+          <article className="rounded-2xl border border-white/10 bg-white/[0.03] p-5">
+            <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-gold-300/80">Exemplo ilustrativo · Autoconhecimento</p>
+            <h3 className="mt-2 text-base font-semibold text-cream-100">Reconhecer padrões que se repetem</h3>
+            <p className="mt-2 text-sm leading-relaxed text-cream-200/70">
+              Uma leitura pode abrir espaço para observar hábitos e reações recorrentes e escolher uma pequena atitude prática para experimentar nos próximos dias.
+            </p>
+          </article>
+        </div>
+        <p className="mt-3 text-center text-[11px] leading-relaxed text-cream-200/45">
+          Estes cenários são exemplos hipotéticos para explicar a proposta do material; não são relatos de clientes nem promessa de resultado.
+        </p>
+      </section>
+
       {/* 3. Benefícios e entregáveis */}
       <section className="mt-10">
         <h2 className="text-center text-lg font-semibold text-cream-100 sm:text-xl">
