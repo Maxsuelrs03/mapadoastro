@@ -88,7 +88,7 @@ export function SalesPage({ details, perspective, onChooseEssential, onChoosePre
           </p>
           {perspective && <p className="mt-3 text-sm text-gold-200">Sua área de interesse: <strong>{perspective}</strong></p>}
           <div className="mt-5 grid grid-cols-3 gap-2 text-left">
-            <div className="rounded-xl border border-white/10 bg-white/[0.03] p-2.5"><UserRound className="mb-2 h-4 w-4 text-gold-300" /><p className="text-[10px] leading-snug text-cream-100 sm:text-xs">Personalizada com seu nome</p></div>
+            <div className="rounded-xl border border-white/10 bg-white/[0.03] p-2.5"><UserRound className="mb-2 h-4 w-4 text-gold-300" /><p className="text-[10px] leading-snug text-cream-100 sm:text-xs">Para ler no celular ou imprimir</p></div>
             <div className="rounded-xl border border-white/10 bg-white/[0.03] p-2.5"><Moon className="mb-2 h-4 w-4 text-gold-300" /><p className="text-[10px] leading-snug text-cream-100 sm:text-xs">Interpretação por temas</p></div>
             <div className="rounded-xl border border-white/10 bg-white/[0.03] p-2.5"><LockKeyhole className="mb-2 h-4 w-4 text-gold-300" /><p className="text-[10px] leading-snug text-cream-100 sm:text-xs">Acesso digital</p></div>
           </div>
@@ -107,7 +107,7 @@ export function SalesPage({ details, perspective, onChooseEssential, onChoosePre
         </div>
         <div className="grid gap-3 sm:grid-cols-3">
           {[
-            { n: '01', title: 'Leitura personalizada', text: 'Uma interpretação apresentada com seu nome e relacionada aos temas explorados na experiência.' },
+            { n: '01', title: 'Guias de reflexão', text: 'Materiais para explorar amor, dinheiro e paz interior no seu ritmo, com leitura fácil no celular.' },
             { n: '02', title: 'Reflexão guiada', text: 'Perguntas e orientações para registrar percepções e considerar outras perspectivas.' },
             { n: '03', title: 'Material complementar', text: 'Conteúdo digital para revisitar as reflexões e organizar pequenos próximos passos.' },
           ].map((item) => <article key={item.n} className="rounded-2xl border border-gold-400/15 bg-white/[0.025] p-4 sm:p-5"><span className="text-xs font-semibold tracking-[0.2em] text-gold-300">{item.n}</span><h3 className="mt-3 font-semibold text-cream-100">{item.title}</h3><p className="mt-2 text-sm leading-relaxed text-cream-200/65">{item.text}</p></article>)}
