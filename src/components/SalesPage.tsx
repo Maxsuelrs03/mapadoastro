@@ -32,6 +32,19 @@ export function SalesPage({ details, perspective, onChooseEssential, onChoosePre
     <div className="mx-auto w-full max-w-2xl px-5">
       {/* 1. Introdução personalizada */}
       <section className="animate-fade-up text-center">
+        <div className="relative mb-6 overflow-hidden rounded-3xl border border-gold-400/20 shadow-[0_18px_60px_-25px_rgba(0,0,0,0.9)]">
+          <img
+            src="https://images.unsplash.com/photo-1600428853876-fb5a850b444f?auto=format&fit=crop&w=1400&q=85"
+            alt="Cartas de tarô dispostas sobre uma mesa em um ambiente acolhedor"
+            className="h-56 w-full object-cover sm:h-72"
+            loading="eager"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#100d19] via-[#100d19]/25 to-black/10" />
+          <div className="absolute inset-x-0 bottom-0 px-5 pb-5 text-left sm:px-7 sm:pb-7">
+            <p className="text-[10px] font-semibold uppercase tracking-[0.25em] text-gold-300 sm:text-xs">Mapa do Astro · sua jornada pessoal</p>
+            <p className="mt-2 max-w-md text-lg font-semibold leading-snug text-white sm:text-2xl">Um momento para olhar para sua história com mais intenção.</p>
+          </div>
+        </div>
         <span className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-gold-400/10">
           <Sparkles className="h-5 w-5 text-gold-300" />
         </span>
@@ -51,7 +64,7 @@ export function SalesPage({ details, perspective, onChooseEssential, onChoosePre
       {/* 2. Contextualização */}
       <section className="mt-10 rounded-2xl border border-white/10 bg-white/[0.03] p-5 sm:p-6">
         <h2 className="text-lg font-semibold text-cream-100">
-          Como este material te apoia
+          {displayName}, como este material pode apoiar você
         </h2>
         <p className="mt-2 text-sm leading-relaxed text-cream-200/70">
           Os entregáveis não prometem previsões científicas nem soluções
@@ -105,6 +118,18 @@ export function SalesPage({ details, perspective, onChooseEssential, onChoosePre
 
       {/* 3. Benefícios e entregáveis */}
       <section className="mt-10">
+        <div className="mb-5 overflow-hidden rounded-2xl border border-gold-400/15">
+          <img
+            src="https://images.unsplash.com/photo-1519682337058-a94d519337bc?auto=format&fit=crop&w=1200&q=80"
+            alt="Caderno aberto para anotações e reflexão pessoal"
+            className="h-36 w-full object-cover sm:h-44"
+            loading="lazy"
+          />
+          <div className="bg-gradient-to-r from-[#171222] to-[#21182a] px-5 py-4">
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-gold-300/80">{displayName}, este material é seu ponto de partida</p>
+            <p className="mt-1 text-sm leading-relaxed text-cream-200/75">Conteúdo digital para explorar perguntas importantes, registrar percepções e transformar reflexão em pequenos próximos passos.</p>
+          </div>
+        </div>
         <h2 className="text-center text-lg font-semibold text-cream-100 sm:text-xl">
           O que você recebe
         </h2>
