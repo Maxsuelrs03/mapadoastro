@@ -141,6 +141,10 @@ export function SalesPage({ details, perspective, onChooseEssential, onChoosePre
         <div className="text-center">
           <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-gold-300/80">Exemplos da experiência</p>
           <h2 className="mt-2 text-2xl font-semibold text-cream-100 sm:text-3xl">Uma experiência feita para olhar para dentro</h2>
+          <div className="mx-auto mt-4 flex w-fit items-center gap-2 rounded-xl border border-gold-400/20 bg-white/[0.03] px-4 py-3">
+            <Stars /><strong className="text-sm text-cream-100">4,5/5</strong>
+          </div>
+          <p className="mt-2 text-[10px] text-cream-200/45">Nota ilustrativa; ainda não representa uma avaliação real de clientes.</p>
         </div>
         <div className="mt-5 grid gap-3 sm:grid-cols-3">
           {[
