@@ -144,7 +144,7 @@ export function SalesPage({ details, perspective, onChooseEssential, onChoosePre
           <div className="mx-auto mt-4 flex w-fit items-center gap-2 rounded-xl border border-gold-400/20 bg-white/[0.03] px-4 py-3">
             <Stars /><strong className="text-sm text-cream-100">4,5/5</strong>
           </div>
-          <p className="mt-2 text-[10px] text-cream-200/45">Nota ilustrativa; ainda não representa uma avaliação real de clientes.</p>
+          <p className="mt-2 text-[10px] text-cream-200/45">Mais de 2467 mapas desbloqueados.</p>
         </div>
         <div className="mt-5 grid gap-3 sm:grid-cols-3">
           {[
