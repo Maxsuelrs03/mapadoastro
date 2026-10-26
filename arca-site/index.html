@@ -9,7 +9,7 @@
 <meta property="og:description" content="10 minutos por dia de história, conversa e oração com o seu filho. Para imprimir ou ler no celular.">
 <meta property="og:image" content="img/og.jpg">
 <meta name="theme-color" content="#F4A83B">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌈</text></svg>">
+<link rel="icon" type="image/svg+xml" href="img/svg/favicon.svg">
 <!-- Utmify: captura de UTMs -->
 <script src="https://cdn.utmify.com.br/scripts/utms/latest.js" data-utmify-prevent-xcod-sck data-utmify-prevent-subids async defer></script>
 <!-- Utmify: pixel (Meta) -->
@@ -90,17 +90,30 @@ footer p+p{margin-top:6px}
 .sticky .p{font-weight:900;font-size:20px;white-space:nowrap}
 .sticky .p small{display:block;font-weight:600;font-size:11px;color:var(--soft)}
 .sticky a{flex:1;background:linear-gradient(180deg,#5cbf4a,#3f9f33);color:#fff;text-decoration:none;text-align:center;font-weight:900;padding:14px 10px;border-radius:12px}
+.brand img{height:34px;width:auto}
+.hero-art{margin:6px auto 4px;width:100%;max-width:min(620px,100%);border-radius:24px;box-shadow:0 18px 40px -22px rgba(40,80,120,.5)}
+.wave{display:block;width:100%;height:34px}
+.gallery{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:20px}
+.gallery figure{background:#fff;border-radius:18px;overflow:hidden;border:1px solid var(--line)}
+.gallery figcaption{font-size:13.5px;font-weight:700;text-align:center;padding:8px 6px 10px}
+.gallery figcaption small{display:block;font-weight:500;color:var(--soft);font-size:12px}
+.deco{position:relative}
+.deco::before,.deco::after{content:"✦";position:absolute;color:#F4C35A;font-size:18px}
+.deco::before{left:6px;top:18px}.deco::after{right:10px;top:40px;font-size:13px}
+.spot{width:120px;margin:0 auto 10px}
+@media(min-width:720px){.gallery{grid-template-columns:repeat(3,1fr)}}
 @media(min-width:720px){.two{grid-template-columns:1fr 1fr}.sticky{display:none}}
 </style>
 </head>
 <body>
 
-<div class="brand">🌈 ARCA DAS HISTÓRIAS</div>
+<div class="brand"><img src="img/svg/logo.svg" alt="" width="220" height="170"> ARCA DAS HISTÓRIAS</div>
 
 <!-- 1. HERO -->
 <header class="hero">
   <div class="wrap">
-    <p class="eyb">Para crianças de 4 a 9 anos</p>
+    <img class="hero-art" src="img/svg/hero.svg" alt="Arca de Noé com animais navegando sob o sol" width="760" height="420">
+    <p class="eyb" style="margin-top:18px">Para crianças de 4 a 9 anos</p>
     <h1>Seu filho pedindo uma história da Bíblia — em vez de pedir o celular.</h1>
     <p class="sub"><b>200 histórias bíblicas ilustradas</b>, cada uma com lição, perguntas para conversar, oração e um desafio do dia. Você só abre e lê: <b>10 minutos</b> e o momento de vocês está pronto.</p>
     <img class="shot" src="img/cartao-davi.jpg" alt="Exemplo de cartão: Davi e Golias, com história, lição, perguntas, oração e desafio" width="794" height="561">
@@ -116,6 +129,7 @@ footer p+p{margin-top:6px}
 <!-- 2. DOR -->
 <section>
   <div class="wrap">
+    <img class="spot" src="img/svg/biblia.svg" alt="" width="120" height="100">
     <p class="eyb">A infância passa rápido</p>
     <h2>Você quer ensinar a fé ao seu filho. Mas o dia acaba e a tela ganhou de novo.</h2>
     <p>Trabalho, casa, cansaço… e quando você percebe, o momento de conversar sobre Deus ficou para amanhã. De novo.</p>
@@ -129,12 +143,30 @@ footer p+p{margin-top:6px}
   <div class="wrap">
     <p class="eyb">Como funciona</p>
     <h2>O ritual “1, 2 ou 3?” — 10 minutos que viram o momento preferido do dia</h2>
+    <img src="img/svg/familia.svg" alt="Mãe e filho no sofá lendo um cartão de história" width="360" height="300" style="width:100%;max-width:min(340px,100%);margin:14px auto 0">
     <div class="steps">
       <div class="step"><b>Ele escolhe: “1, 2 ou 3?”</b><span>Você separa 3 cartões e a criança escolhe a história do dia. Vira uma brincadeira que ela mesma pede.</span></div>
       <div class="step"><b>Você conta</b><span>Linguagem simples, feita para 4 a 9 anos. Leva uns 2 minutos.</span></div>
       <div class="step"><b>Vocês conversam</b><span>3 perguntas prontas fazem a criança pensar, falar e lembrar.</span></div>
       <div class="step"><b>Vocês oram juntos</b><span>Uma oração curtinha, do tamanho do coração de uma criança.</span></div>
       <div class="step"><b>A fé vai para a prática</b><span>Um desafio do dia para viver a lição — e conversar sobre ele à noite.</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- 3b. GALERIA DE HISTÓRIAS -->
+<section class="deco">
+  <div class="wrap">
+    <p class="eyb">Da Criação ao Apocalipse</p>
+    <h2>As histórias que marcaram gerações — contadas para o seu filho</h2>
+    <p>Noé e a arca, Davi e Golias, Jonas e o grande peixe, o nascimento de Jesus, a multiplicação dos pães… São <b>200 histórias</b>, em ordem, para a criança conhecer a Bíblia inteira.</p>
+    <div class="gallery">
+      <figure><img src="img/svg/davi.svg" alt="Davi enfrentando Golias" loading="lazy" width="300" height="260"><figcaption>Davi e Golias<small>1 Samuel 17</small></figcaption></figure>
+      <figure><img src="img/svg/jonas.svg" alt="O grande peixe de Jonas" loading="lazy" width="300" height="260"><figcaption>Jonas e o grande peixe<small>Jonas 1–2</small></figcaption></figure>
+      <figure><img src="img/svg/belem.svg" alt="A estrela sobre a manjedoura" loading="lazy" width="300" height="260"><figcaption>Jesus nasce em Belém<small>Lucas 2</small></figcaption></figure>
+      <figure><img src="img/svg/paes.svg" alt="Cesto com cinco pães e dois peixes" loading="lazy" width="300" height="260"><figcaption>Cinco pães e dois peixes<small>João 6</small></figcaption></figure>
+      <figure><img src="img/svg/leao.svg" alt="Leão manso" loading="lazy" width="300" height="260"><figcaption>Daniel na cova dos leões<small>Daniel 6</small></figcaption></figure>
+      <figure><img src="img/svg/ovelhas.svg" alt="Ovelhas e cajado do pastor" loading="lazy" width="300" height="260"><figcaption>A ovelha perdida<small>Lucas 15</small></figcaption></figure>
     </div>
   </div>
 </section>
@@ -201,6 +233,7 @@ footer p+p{margin-top:6px}
     <p class="eyb" style="text-align:center">Comece hoje</p>
     <h2 style="text-align:center">Arca das Histórias — kit completo</h2>
     <div class="offer">
+      <img src="img/svg/logo.svg" alt="" width="220" height="170" style="width:150px;margin:-6px auto 4px">
       <ul>
         <li>200 histórias bíblicas ilustradas (para imprimir)</li>
         <li>Versão para celular e tablet</li>
@@ -240,6 +273,7 @@ footer p+p{margin-top:6px}
 
 <section>
   <div class="wrap" style="text-align:center">
+    <img src="img/svg/logo.svg" alt="" width="220" height="170" style="width:170px;margin:0 auto 10px">
     <h2>A primeira história pode começar ainda hoje.</h2>
     <p style="color:var(--soft)">Separe 3 cartões, pergunte “1, 2 ou 3?” e veja o que acontece.</p>
     <a class="btn cta" href="#" data-checkout>QUERO A ARCA DAS HISTÓRIAS</a>
