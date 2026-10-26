@@ -7,279 +7,392 @@
 <meta name="description" content="200 histórias bíblicas ilustradas para crianças de 4 a 9 anos, com lição, perguntas, oração e desafio do dia. Para imprimir ou ler no celular.">
 <meta property="og:title" content="Arca das Histórias — 200 histórias bíblicas para crianças">
 <meta property="og:description" content="10 minutos por dia de história, conversa e oração com o seu filho. Para imprimir ou ler no celular.">
-<meta property="og:image" content="img/og.jpg">
+<meta property="og:image" content="https://arcadashistorias.pages.dev/img/og.jpg">
 <meta name="theme-color" content="#F4A83B">
 <link rel="icon" type="image/svg+xml" href="img/svg/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Nunito:wght@500;600;700;800;900&display=swap" rel="stylesheet">
 <!-- Utmify: captura de UTMs -->
 <script src="https://cdn.utmify.com.br/scripts/utms/latest.js" data-utmify-prevent-xcod-sck data-utmify-prevent-subids async defer></script>
 <!-- Utmify: pixel (Meta) -->
 <script>
   window.pixelId = "6adbb330b97251b2bba8cc1b";
   var utmifyPixel = document.createElement("script");
-  utmifyPixel.setAttribute("async", "");
-  utmifyPixel.setAttribute("defer", "");
+  utmifyPixel.setAttribute("async", ""); utmifyPixel.setAttribute("defer", "");
   utmifyPixel.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js");
   document.head.appendChild(utmifyPixel);
 </script>
 <style>
-:root{--ink:#3A2E2A;--soft:#6d5d53;--bg:#FFFBF2;--cream:#FFF3DC;--gold:#F4A83B;--gold-d:#D9861A;--blue:#5BA4CF;--green:#6FAF57;--coral:#E77F67;--line:#F0E2CB}
+:root{--ink:#3A2A22;--soft:#6e5d52;--bg:#FFFBF2;--cream:#FFF2D6;--sky:#DFF2FB;--gold:#F4A83B;--gold-d:#D9861A;--blue:#4F9ED0;--green:#58B246;--coral:#EE7F66;--purple:#9B7EDE;--line:#F0E2CB;--night:#2E3A6B}
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--ink);background:var(--bg);line-height:1.55;font-size:17px;-webkit-font-smoothing:antialiased}
+body{font-family:Nunito,system-ui,sans-serif;color:var(--ink);background:var(--bg);line-height:1.55;font-size:17px;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 img{max-width:100%;height:auto;display:block}
-.wrap{max-width:680px;margin:0 auto;padding:0 18px}
-h1,h2,h3{font-family:Georgia,"Times New Roman",serif;line-height:1.12;color:#2f2420;letter-spacing:-.01em}
-h1{font-size:clamp(30px,8vw,46px)}
-h2{font-size:clamp(25px,6.4vw,34px);margin-bottom:12px}
-h3{font-size:20px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 18px}
+.narrow{max-width:720px}
+h1,h2,h3{font-family:"Baloo 2",Nunito,sans-serif;line-height:1.05;color:#2c1d14;letter-spacing:-.01em}
+h1{font-size:clamp(34px,8.6vw,58px);font-weight:800}
+h2{font-size:clamp(28px,6.6vw,44px);font-weight:800;margin-bottom:12px}
+h3{font-size:22px;font-weight:700}
 p+p{margin-top:12px}
-.eyb{font-size:12px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-d);margin-bottom:8px}
-section{padding:46px 0}
-.alt{background:var(--cream)}
-.brand{display:flex;align-items:center;justify-content:center;gap:8px;padding:14px 0;font-weight:800;letter-spacing:.06em;font-size:14px;color:#7a4a10}
-/* HERO */
-.hero{padding:18px 0 40px;text-align:center;background:radial-gradient(ellipse at 50% 0,#fff2cc 0,var(--bg) 70%)}
-.hero p.sub{font-size:18px;color:var(--soft);margin:14px auto 0;max-width:560px}
-.hero .shot{margin:24px auto 0;border-radius:18px;box-shadow:0 18px 40px -18px rgba(90,55,10,.45)}
-.price{margin-top:22px}
-.price .de{color:#9b8b80;text-decoration:line-through;font-size:16px}
-.price .por{font-size:44px;font-weight:900;color:#2f2420;line-height:1}
-.price small{display:block;color:var(--soft);font-size:14px;margin-top:4px}
-.btn{display:block;width:100%;max-width:520px;margin:18px auto 0;background:linear-gradient(180deg,#5cbf4a,#3f9f33);color:#fff;text-decoration:none;font-weight:900;font-size:19px;text-align:center;padding:19px 18px;border-radius:14px;box-shadow:0 6px 0 #2f7d26,0 14px 24px -10px rgba(40,110,30,.6);letter-spacing:.01em;transition:transform .08s}
-.btn:active{transform:translateY(3px);box-shadow:0 3px 0 #2f7d26}
-.trust{display:flex;flex-wrap:wrap;justify-content:center;gap:6px 16px;margin-top:14px;font-size:13.5px;color:var(--soft)}
+.c{text-align:center}
+.eyb{display:inline-block;font-size:13px;font-weight:900;letter-spacing:.12em;text-transform:uppercase;color:#fff;background:var(--gold);padding:5px 12px;border-radius:99px;margin-bottom:12px}
+.eyb.b{background:var(--blue)}.eyb.g{background:var(--green)}.eyb.p{background:var(--purple)}.eyb.r{background:var(--coral)}
+section{position:relative;padding:56px 0}
+.wv{display:block;width:100%;height:56px;margin-bottom:-1px}
+.bg-sky{background:var(--sky)}.bg-cream{background:var(--cream)}.bg-night{background:var(--night);color:#eef}.bg-green{background:#E8F6E1}
+.bg-night h2,.bg-night h3{color:#fff}
+/* topo */
+.top{background:var(--night);color:#fff;font-weight:800;font-size:13.5px;text-align:center;padding:8px 12px}
+.top b{color:#FFD24A}
+.brand{display:flex;align-items:center;justify-content:center;gap:10px;padding:12px 0 0;font-family:"Baloo 2";font-weight:800;font-size:22px;color:#6b3d12}
+.brand img{height:46px;width:auto}
+/* hero */
+.hero{background:linear-gradient(180deg,#FFF3D4 0%,#DFF2FB 100%);padding:14px 0 0;overflow:hidden}
+.hero .grid{display:grid;gap:24px;align-items:center}
+.hero h1 span{color:var(--gold-d);background:linear-gradient(transparent 62%,#FFE08A 62%)}
+.hero .sub{font-size:19px;color:var(--soft);margin-top:14px}
+.hero-art{border-radius:28px;box-shadow:0 22px 44px -24px rgba(30,70,110,.55);width:100%}
+.badges{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.badge{background:#fff;border:2px solid var(--line);border-radius:99px;padding:6px 12px;font-weight:800;font-size:14px}
+.price{margin-top:20px;display:flex;align-items:flex-end;gap:12px;flex-wrap:wrap}
+.price .por{font-family:"Baloo 2";font-size:54px;font-weight:800;line-height:.9;color:#2c1d14}
+.price small{display:block;color:var(--soft);font-size:14px;font-weight:700}
+.btn{display:block;width:100%;max-width:560px;margin-top:18px;background:linear-gradient(180deg,#68C955,#45A336);color:#fff;text-decoration:none;font-weight:900;font-size:20px;text-align:center;padding:20px 18px;border-radius:18px;box-shadow:0 7px 0 #2f7d26,0 18px 28px -12px rgba(40,110,30,.6);letter-spacing:.01em;transition:transform .08s;animation:pulse 2.4s ease-in-out infinite}
+.btn:active{transform:translateY(4px);box-shadow:0 3px 0 #2f7d26}
+.btn small{display:block;font-size:13px;font-weight:800;opacity:.9;margin-top:2px}
+@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.025)}}
+.trust{display:flex;flex-wrap:wrap;gap:6px 16px;margin-top:14px;font-size:14px;font-weight:700;color:var(--soft)}
 .trust span::before{content:"✓ ";color:var(--green);font-weight:900}
-/* lists */
-.list{list-style:none;display:grid;gap:12px;margin-top:18px}
-.list li{background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px 16px;display:flex;gap:12px;align-items:flex-start}
-.list li .ic{flex:0 0 38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:19px;background:var(--cream)}
-.list li b{display:block}
-.list li span.t{color:var(--soft);font-size:15.5px}
-.steps{display:grid;gap:12px;margin-top:18px;counter-reset:s}
-.step{background:#fff;border-radius:14px;padding:16px 16px 16px 62px;position:relative;border:1px solid var(--line)}
-.step::before{counter-increment:s;content:counter(s);position:absolute;left:16px;top:15px;width:32px;height:32px;border-radius:50%;background:var(--gold);color:#fff;font-weight:900;display:flex;align-items:center;justify-content:center}
-.step:nth-child(2)::before{background:var(--blue)}.step:nth-child(3)::before{background:var(--green)}.step:nth-child(4)::before{background:var(--coral)}.step:nth-child(5)::before{background:#9B7EDE}
-.step b{display:block}
-.step span{color:var(--soft);font-size:15.5px}
-.figure{margin-top:20px;border-radius:16px;overflow:hidden;box-shadow:0 14px 30px -16px rgba(90,55,10,.4);background:#fff}
-.cap{font-size:13.5px;color:var(--soft);text-align:center;margin-top:10px}
-.two{display:grid;grid-template-columns:1fr;gap:16px;margin-top:18px}
-.box{background:#fff;border:1px solid var(--line);border-radius:16px;padding:18px}
-.quote{font-family:Georgia,serif;font-style:italic;font-size:21px;line-height:1.4;color:#5a3a12;text-align:center;padding:8px 6px}
-/* offer */
-.offer{background:#fff;border:2px solid var(--gold);border-radius:20px;padding:22px 18px;margin-top:20px;box-shadow:0 18px 40px -22px rgba(90,55,10,.45)}
-.offer ul{list-style:none;display:grid;gap:10px;margin:14px 0 6px}
-.offer li{padding-left:28px;position:relative;font-size:16px}
-.offer li::before{content:"✓";position:absolute;left:0;top:0;width:20px;height:20px;border-radius:50%;background:var(--green);color:#fff;font-size:12px;font-weight:900;display:flex;align-items:center;justify-content:center;margin-top:2px}
-.offer .bonus{background:var(--cream);border-radius:12px;padding:10px 12px;margin-top:8px;font-size:15px}
-.guar{display:flex;gap:14px;align-items:flex-start;background:#fff;border:1px dashed var(--gold);border-radius:16px;padding:18px;margin-top:18px}
-.guar .seal{flex:0 0 64px;height:64px;border-radius:50%;background:var(--gold);color:#fff;font-weight:900;display:flex;flex-direction:column;align-items:center;justify-content:center;line-height:1;font-size:22px}
-.guar .seal small{font-size:10px;letter-spacing:.08em}
+/* kit mockup */
+.kit{position:relative;height:330px;margin:10px auto 0;max-width:520px}
+.kit img{position:absolute;border-radius:14px;box-shadow:0 18px 30px -14px rgba(60,35,10,.45)}
+.kit .k1{width:62%;left:0;top:30px;transform:rotate(-8deg)}
+.kit .k2{width:62%;left:18%;top:8px;transform:rotate(3deg);z-index:2}
+.kit .k3{width:30%;right:0;top:70px;z-index:3;border-radius:22px}
+.kit .k4{width:30%;left:4%;top:170px;z-index:4;transform:rotate(-4deg)}
+.kit .tag{position:absolute;z-index:5;background:var(--coral);color:#fff;font-weight:900;font-family:"Baloo 2";font-size:18px;border-radius:50%;width:96px;height:96px;display:flex;align-items:center;justify-content:center;text-align:center;line-height:1;right:4%;top:-6px;transform:rotate(10deg);box-shadow:0 10px 20px -8px rgba(0,0,0,.35)}
+/* números */
+.nums{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:22px}
+.num{background:#fff;border-radius:20px;padding:16px 10px;text-align:center;border-bottom:6px solid var(--c)}
+.num b{display:block;font-family:"Baloo 2";font-size:44px;line-height:1;color:var(--c)}
+.num span{font-weight:800;font-size:15px}
+.num i{font-style:normal;font-size:26px;display:block;margin-bottom:2px}
+/* antes depois */
+.ad{display:grid;gap:16px;margin-top:22px}
+.ad figure{background:#fff;border-radius:24px;overflow:hidden;border:3px solid var(--c)}
+.ad figcaption{padding:14px 16px 18px}
+.ad figcaption b{font-family:"Baloo 2";font-size:22px;color:var(--c);display:block}
+.ad ul{list-style:none;margin-top:6px;display:grid;gap:4px;font-weight:700;font-size:15.5px}
+/* passos */
+.steps{display:grid;gap:14px;margin-top:22px}
+.step{background:#fff;border-radius:22px;padding:18px 18px 18px 84px;position:relative;box-shadow:0 10px 24px -18px rgba(60,35,10,.5)}
+.step .n{position:absolute;left:16px;top:16px;width:52px;height:52px;border-radius:16px;background:var(--c);color:#fff;font-family:"Baloo 2";font-weight:800;font-size:28px;display:flex;align-items:center;justify-content:center;transform:rotate(-6deg)}
+.step b{font-family:"Baloo 2";font-size:21px;display:block;line-height:1.1}
+.step span{color:var(--soft);font-size:15.5px;font-weight:600}
+.step em{font-style:normal;font-size:22px;margin-left:4px}
+/* galeria + marquee */
+.gallery{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:22px}
+.gallery figure{background:#fff;border-radius:22px;overflow:hidden;box-shadow:0 12px 26px -18px rgba(0,0,0,.6);transform:rotate(var(--r,0deg))}
+.gallery figcaption{font-weight:900;text-align:center;padding:8px 6px 12px;font-size:14.5px;line-height:1.2}
+.gallery figcaption small{display:block;font-weight:700;color:var(--soft);font-size:12px;margin-top:2px}
+.marq{overflow:hidden;margin-top:24px;-webkit-mask:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.track{display:flex;gap:8px;width:max-content;animation:mq 90s linear infinite}
+.track.rev{animation-direction:reverse;margin-top:8px}
+@keyframes mq{to{transform:translateX(-50%)}}
+.chip{white-space:nowrap;border-radius:99px;padding:8px 14px;font-weight:800;font-size:14px}
+.c1{background:#FFE7B8;color:#7a4a10}.c2{background:#D7ECFA;color:#1f4f73}
+/* amostra */
+.sample{display:grid;gap:18px;align-items:center;margin-top:22px}
+.sample .card{border-radius:18px;box-shadow:0 22px 40px -24px rgba(60,35,10,.55);transform:rotate(-1.5deg)}
+.anat{list-style:none;display:grid;gap:10px}
+.anat li{display:flex;gap:12px;align-items:flex-start;background:#fff;border-radius:16px;padding:12px 14px}
+.anat li i{font-style:normal;font-size:24px;line-height:1}
+.anat li b{display:block}
+.anat li span{color:var(--soft);font-size:15px;font-weight:600}
+/* celular */
+.phone-row{display:grid;gap:20px;align-items:center}
+.phone-row img{max-width:290px;margin:0 auto;border-radius:24px}
+/* para quem */
+.who{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:20px}
+.who div{background:rgba(255,255,255,.08);border:2px solid rgba(255,255,255,.18);border-radius:20px;padding:16px;text-align:center;font-weight:800}
+.who div i{font-style:normal;font-size:34px;display:block;margin-bottom:4px}
+.who div span{display:block;font-weight:600;font-size:14px;opacity:.85;margin-top:4px}
+/* bônus */
+.bonus{display:grid;gap:20px;align-items:center;margin-top:20px;background:#fff;border-radius:28px;padding:20px;border:3px dashed var(--purple)}
+.bonus img{max-width:240px;margin:0 auto;border-radius:12px;box-shadow:0 18px 30px -16px rgba(60,35,10,.5);transform:rotate(-3deg)}
+.bonus ul{list-style:none;display:grid;gap:8px;margin-top:10px}
+.bonus li{font-weight:700}
+/* oferta */
+.offer{background:#fff;border:4px solid var(--gold);border-radius:30px;padding:24px 18px;margin:22px auto 0;max-width:620px;box-shadow:0 26px 50px -28px rgba(90,55,10,.6);position:relative}
+.offer .ribbon{position:absolute;top:-18px;left:50%;transform:translateX(-50%);background:var(--coral);color:#fff;font-weight:900;padding:6px 18px;border-radius:99px;white-space:nowrap;font-size:14px}
+.offer ul{list-style:none;display:grid;gap:10px;margin:16px 0 8px}
+.offer li{padding-left:32px;position:relative;font-weight:700}
+.offer li::before{content:"✓";position:absolute;left:0;top:1px;width:22px;height:22px;border-radius:50%;background:var(--green);color:#fff;font-size:13px;font-weight:900;display:flex;align-items:center;justify-content:center}
+.offer .bon{background:#F1EAFD;border-radius:14px;padding:12px 14px;font-weight:700;font-size:15.5px}
+.offer .pp{text-align:center;margin-top:16px}
+.offer .pp .por{font-family:"Baloo 2";font-size:64px;font-weight:800;line-height:.9}
+.offer .pp small{display:block;color:var(--soft);font-weight:700}
+.offer .pp .per{display:inline-block;margin-top:8px;background:#E8F6E1;color:#2f7d26;font-weight:900;border-radius:99px;padding:5px 12px;font-size:14px}
+.offer .btn{margin-left:auto;margin-right:auto}
+.pay{display:flex;justify-content:center;gap:8px;margin-top:12px;flex-wrap:wrap}
+.pay span{background:var(--cream);border-radius:8px;padding:4px 10px;font-weight:800;font-size:13px;color:var(--soft)}
+.guar{display:flex;gap:16px;align-items:center;background:#fff;border-radius:24px;padding:18px;margin:20px auto 0;max-width:620px;border:2px solid var(--line)}
+.seal{flex:0 0 92px;height:92px;border-radius:50%;background:radial-gradient(circle,#FFD86E 0 55%,#F4A83B 56%);display:flex;flex-direction:column;align-items:center;justify-content:center;font-family:"Baloo 2";font-weight:800;color:#6b3d12;line-height:.9;box-shadow:0 0 0 6px #fff,0 0 0 8px #F4A83B}
+.seal b{font-size:38px}.seal small{font-size:12px;letter-spacing:.06em}
 /* faq */
-details{background:#fff;border:1px solid var(--line);border-radius:14px;padding:0 16px;margin-top:10px}
-summary{cursor:pointer;list-style:none;padding:16px 26px 16px 0;font-weight:700;position:relative}
+details{background:#fff;border-radius:18px;padding:0 18px;margin-top:10px;border:2px solid var(--line)}
+summary{cursor:pointer;list-style:none;padding:16px 28px 16px 0;font-weight:900;position:relative}
 summary::-webkit-details-marker{display:none}
-summary::after{content:"+";position:absolute;right:0;top:12px;font-size:24px;color:var(--gold-d);font-weight:400}
+summary::after{content:"+";position:absolute;right:0;top:9px;font-size:28px;color:var(--gold-d)}
 details[open] summary::after{content:"–"}
-details p{padding:0 0 16px;color:var(--soft);font-size:15.5px}
-footer{padding:30px 0 90px;text-align:center;font-size:12.5px;color:#9b8b80}
+details p{padding:0 0 16px;color:var(--soft);font-weight:600}
+footer{background:var(--night);color:#cfd3ea;padding:26px 0 100px;text-align:center;font-size:13px}
 footer p+p{margin-top:6px}
-/* sticky cta mobile */
-.sticky{position:fixed;left:0;right:0;bottom:0;background:rgba(255,251,242,.97);border-top:1px solid var(--line);padding:10px 14px calc(10px + env(safe-area-inset-bottom));display:flex;align-items:center;gap:12px;transform:translateY(110%);transition:transform .25s;z-index:20;backdrop-filter:blur(6px)}
+.float{position:absolute;pointer-events:none;opacity:.9;animation:fl 6s ease-in-out infinite}
+@keyframes fl{50%{transform:translateY(-10px)}}
+.sticky{position:fixed;left:0;right:0;bottom:0;background:rgba(255,251,242,.97);border-top:2px solid var(--line);padding:10px 14px calc(10px + env(safe-area-inset-bottom));display:flex;align-items:center;gap:12px;transform:translateY(110%);transition:transform .25s;z-index:20;backdrop-filter:blur(6px)}
 .sticky.on{transform:none}
-.sticky .p{font-weight:900;font-size:20px;white-space:nowrap}
-.sticky .p small{display:block;font-weight:600;font-size:11px;color:var(--soft)}
-.sticky a{flex:1;background:linear-gradient(180deg,#5cbf4a,#3f9f33);color:#fff;text-decoration:none;text-align:center;font-weight:900;padding:14px 10px;border-radius:12px}
-.brand img{height:34px;width:auto}
-.hero-art{margin:6px auto 4px;width:100%;max-width:min(620px,100%);border-radius:24px;box-shadow:0 18px 40px -22px rgba(40,80,120,.5)}
-.wave{display:block;width:100%;height:34px}
-.gallery{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:20px}
-.gallery figure{background:#fff;border-radius:18px;overflow:hidden;border:1px solid var(--line)}
-.gallery figcaption{font-size:13.5px;font-weight:700;text-align:center;padding:8px 6px 10px}
-.gallery figcaption small{display:block;font-weight:500;color:var(--soft);font-size:12px}
-.deco{position:relative}
-.deco::before,.deco::after{content:"✦";position:absolute;color:#F4C35A;font-size:18px}
-.deco::before{left:6px;top:18px}.deco::after{right:10px;top:40px;font-size:13px}
-.spot{width:120px;margin:0 auto 10px}
-@media(min-width:720px){.gallery{grid-template-columns:repeat(3,1fr)}}
-@media(min-width:720px){.two{grid-template-columns:1fr 1fr}.sticky{display:none}}
+.sticky .p{font-family:"Baloo 2";font-weight:800;font-size:24px;white-space:nowrap;line-height:1}
+.sticky .p small{display:block;font-family:Nunito;font-weight:700;font-size:11px;color:var(--soft)}
+.sticky a{flex:1;background:linear-gradient(180deg,#68C955,#45A336);color:#fff;text-decoration:none;text-align:center;font-weight:900;padding:14px 10px;border-radius:14px;box-shadow:0 4px 0 #2f7d26}
+@media(min-width:820px){
+ .hero .grid{grid-template-columns:1.05fr .95fr}
+ .nums{grid-template-columns:repeat(4,1fr)}
+ .ad{grid-template-columns:1fr 1fr}
+ .steps{grid-template-columns:1fr 1fr}
+ .gallery{grid-template-columns:repeat(3,1fr)}
+ .sample,.phone-row,.bonus{grid-template-columns:1fr 1fr}
+ .who{grid-template-columns:repeat(4,1fr)}
+ .sticky{display:none}
+}
 </style>
 </head>
 <body>
 
-<div class="brand"><img src="img/svg/logo.svg" alt="" width="220" height="170"> ARCA DAS HISTÓRIAS</div>
+<div class="top">🎁 Bônus incluso: <b>Guia da Arca para os Pais</b> · acesso imediato</div>
 
-<!-- 1. HERO -->
+<!-- HERO -->
 <header class="hero">
+  <div class="brand"><img src="img/svg/logo.svg" alt="" width="220" height="170">Arca das Histórias</div>
   <div class="wrap">
-    <img class="hero-art" src="img/svg/hero.svg" alt="Arca de Noé com animais navegando sob o sol" width="760" height="420">
-    <p class="eyb" style="margin-top:18px">Para crianças de 4 a 9 anos</p>
-    <h1>Seu filho pedindo uma história da Bíblia — em vez de pedir o celular.</h1>
-    <p class="sub"><b>200 histórias bíblicas ilustradas</b>, cada uma com lição, perguntas para conversar, oração e um desafio do dia. Você só abre e lê: <b>10 minutos</b> e o momento de vocês está pronto.</p>
-    <img class="shot" src="img/cartao-davi.jpg" alt="Exemplo de cartão: Davi e Golias, com história, lição, perguntas, oração e desafio" width="794" height="561">
-    <div class="price">
-      <div class="por">R$ 27,90</div>
-      <small>pagamento único · acesso imediato · sem mensalidade</small>
+    <div class="grid" style="padding-top:18px">
+      <div>
+        <span class="eyb">Para crianças de 4 a 9 anos</span>
+        <h1>Seu filho pedindo uma <span>história da Bíblia</span> — em vez de pedir o celular.</h1>
+        <p class="sub"><b>200 histórias bíblicas ilustradas</b>, cada uma com lição, perguntas para conversar, oração e desafio do dia. Você só abre e lê: <b>10 minutos</b> e o momento de vocês está pronto.</p>
+        <div class="badges"><span class="badge">📖 200 histórias</span><span class="badge">🖨️ Para imprimir</span><span class="badge">📱 Ou no celular</span><span class="badge">🛡️ Garantia 7 dias</span></div>
+      </div>
+      <div><img class="hero-art" src="img/svg/hero.svg" alt="Arca de Noé com animais navegando sob o sol" width="760" height="420"></div>
     </div>
-    <a class="btn cta" href="#oferta">QUERO AS 200 HISTÓRIAS</a>
-    <div class="trust"><span>Para imprimir</span><span>Ou ler no celular</span><span>Garantia de 7 dias</span></div>
+    <div class="kit">
+      <img class="k1" src="img/cartao-belem.jpg" alt="" width="794" height="561">
+      <img class="k2" src="img/cartao-davi.jpg" alt="Cartão Davi e Golias" width="794" height="561">
+      <img class="k3" src="img/celular.jpg" alt="História no celular" width="520" height="820">
+      <img class="k4" src="img/bonus-capa.jpg" alt="Capa do bônus" width="496" height="702">
+      <div class="tag">200<br>histórias</div>
+    </div>
+    <div class="narrow" style="margin:0 auto;padding-bottom:30px">
+      <div class="price" style="justify-content:center"><div class="por">R$ 27,90</div><small>pagamento único<br>sem mensalidade</small></div>
+      <a class="btn cta" href="#oferta" style="margin-left:auto;margin-right:auto">QUERO AS 200 HISTÓRIAS<small>acesso imediato no seu e-mail</small></a>
+      <div class="trust" style="justify-content:center"><span>Pix ou cartão</span><span>Compra segura</span><span>Garantia de 7 dias</span></div>
+    </div>
   </div>
+  <svg class="wv" style="background:#DFF2FB" viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true"><path d="M0 40 C240 90 480 0 720 36 C960 72 1200 10 1440 44 V80 H0Z" fill="#FFFBF2"/></svg>
 </header>
 
-<!-- 2. DOR -->
-<section>
-  <div class="wrap">
-    <img class="spot" src="img/svg/biblia.svg" alt="" width="120" height="100">
-    <p class="eyb">A infância passa rápido</p>
-    <h2>Você quer ensinar a fé ao seu filho. Mas o dia acaba e a tela ganhou de novo.</h2>
-    <p>Trabalho, casa, cansaço… e quando você percebe, o momento de conversar sobre Deus ficou para amanhã. De novo.</p>
-    <p>Não é falta de amor. É falta de um jeito <b>simples, pronto e que a criança goste</b>. Ninguém tem tempo de preparar uma aula toda noite — e ler a Bíblia “de adulto” para uma criança de 5 anos não prende a atenção.</p>
-    <p class="quote">“Ensina a criança no caminho em que deve andar…”<br><small style="font-size:14px;font-style:normal;color:#9b7a4d">Provérbios 22:6</small></p>
+<!-- NÚMEROS -->
+<section style="padding-top:20px">
+  <div class="wrap c">
+    <span class="eyb b">Tudo pronto para usar</span>
+    <h2>Um baú inteiro de momentos de fé</h2>
+    <div class="nums">
+      <div class="num" style="--c:var(--gold)"><i>📖</i><b>200</b><span>histórias da Bíblia</span></div>
+      <div class="num" style="--c:var(--blue)"><i>💬</i><b>600</b><span>perguntas para conversar</span></div>
+      <div class="num" style="--c:var(--green)"><i>🙏</i><b>200</b><span>orações curtinhas</span></div>
+      <div class="num" style="--c:var(--coral)"><i>⭐</i><b>200</b><span>desafios do dia</span></div>
+    </div>
   </div>
 </section>
 
-<!-- 3. COMO FUNCIONA -->
-<section class="alt">
+<!-- ANTES / DEPOIS -->
+<svg class="wv" style="background:#FFFBF2" viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true"><path d="M0 40 C240 90 480 0 720 36 C960 72 1200 10 1440 44 V80 H0Z" fill="#FFF2D6"/></svg>
+<section class="bg-cream" style="padding-top:30px">
+  <div class="wrap narrow c">
+    <span class="eyb r">A infância passa rápido</span>
+    <h2>Você quer ensinar a fé ao seu filho. Mas o dia acaba… e a tela ganha de novo.</h2>
+    <p style="color:var(--soft);font-weight:600">Não é falta de amor. É falta de um jeito <b>simples, pronto e que a criança goste</b>. Ninguém tem tempo de preparar uma aula toda noite.</p>
+  </div>
   <div class="wrap">
-    <p class="eyb">Como funciona</p>
-    <h2>O ritual “1, 2 ou 3?” — 10 minutos que viram o momento preferido do dia</h2>
-    <img src="img/svg/familia.svg" alt="Mãe e filho no sofá lendo um cartão de história" width="360" height="300" style="width:100%;max-width:min(340px,100%);margin:14px auto 0">
+    <div class="ad">
+      <figure style="--c:#8C93B8"><img src="img/svg/antes.svg" alt="Criança sozinha no tablet à noite" width="360" height="300" style="width:100%"><figcaption><b>Sem a Arca</b><ul><li>😕 Tela até a hora de dormir</li><li>😕 “Amanhã a gente lê a Bíblia…”</li><li>😕 Não sabe por onde começar</li></ul></figcaption></figure>
+      <figure style="--c:var(--green)"><img src="img/svg/familia.svg" alt="Mãe e filho lendo um cartão de história" width="360" height="300" style="width:100%"><figcaption><b>Com a Arca das Histórias</b><ul><li>😊 10 minutos juntos, todo dia</li><li>😊 Ele mesmo pede a história</li><li>😊 Fé, conversa e oração em família</li></ul></figcaption></figure>
+    </div>
+    <p class="c" style="font-family:'Baloo 2';font-size:23px;color:#6b3d12;margin-top:26px;line-height:1.3">“Ensina a criança no caminho em que deve andar…”<br><small style="font-family:Nunito;font-size:14px;color:var(--soft)">Provérbios 22:6</small></p>
+  </div>
+</section>
+<svg class="wv" style="background:#FFF2D6" viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true"><path d="M0 40 C240 90 480 0 720 36 C960 72 1200 10 1440 44 V80 H0Z" fill="#FFFBF2"/></svg>
+
+<!-- COMO FUNCIONA -->
+<section style="padding-top:20px">
+  <div class="wrap c"><span class="eyb g">Como funciona</span><h2>O ritual “1, 2 ou 3?”</h2><p style="color:var(--soft);font-weight:700">10 minutos que viram o momento preferido do dia</p></div>
+  <div class="wrap">
     <div class="steps">
-      <div class="step"><b>Ele escolhe: “1, 2 ou 3?”</b><span>Você separa 3 cartões e a criança escolhe a história do dia. Vira uma brincadeira que ela mesma pede.</span></div>
-      <div class="step"><b>Você conta</b><span>Linguagem simples, feita para 4 a 9 anos. Leva uns 2 minutos.</span></div>
-      <div class="step"><b>Vocês conversam</b><span>3 perguntas prontas fazem a criança pensar, falar e lembrar.</span></div>
-      <div class="step"><b>Vocês oram juntos</b><span>Uma oração curtinha, do tamanho do coração de uma criança.</span></div>
-      <div class="step"><b>A fé vai para a prática</b><span>Um desafio do dia para viver a lição — e conversar sobre ele à noite.</span></div>
+      <div class="step" style="--c:var(--gold)"><div class="n">1</div><b>Ele escolhe: “1, 2 ou 3?” <em>🃏</em></b><span>Você separa 3 cartões e a criança escolhe a história do dia. Vira uma brincadeira que ela pede.</span></div>
+      <div class="step" style="--c:var(--blue)"><div class="n">2</div><b>Você conta <em>📖</em></b><span>Linguagem simples, feita para 4 a 9 anos. Leva uns 2 minutos.</span></div>
+      <div class="step" style="--c:var(--green)"><div class="n">3</div><b>Vocês conversam <em>💬</em></b><span>3 perguntas prontas fazem a criança pensar, falar e lembrar.</span></div>
+      <div class="step" style="--c:var(--coral)"><div class="n">4</div><b>Vocês oram juntos <em>🙏</em></b><span>Uma oração curtinha, do tamanho do coração de uma criança.</span></div>
+      <div class="step" style="--c:var(--purple)"><div class="n">5</div><b>A fé vai para a prática <em>⭐</em></b><span>Um desafio do dia para viver a lição — e conversar sobre ele à noite.</span></div>
+      <div class="step" style="--c:#3FB8AF"><div class="n">6</div><b>Guarda na arca <em>⛵</em></b><span>O cartão vai para a caixinha das “já vividas” e a criança pinta a bolinha na Trilha da Arca.</span></div>
     </div>
   </div>
 </section>
 
-<!-- 3b. GALERIA DE HISTÓRIAS -->
-<section class="deco">
+<!-- JORNADA -->
+<svg class="wv" style="background:#FFFBF2" viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true"><path d="M0 40 C240 90 480 0 720 36 C960 72 1200 10 1440 44 V80 H0Z" fill="#DFF2FB"/></svg>
+<section class="bg-sky" style="padding-top:30px">
+  <div class="wrap c"><span class="eyb b">Da Criação ao Apocalipse</span><h2>Uma viagem pela Bíblia inteira</h2><p style="color:var(--soft);font-weight:600;max-width:640px;margin:0 auto">As histórias que marcaram gerações, em ordem: <b>110 do Antigo Testamento</b> e <b>90 do Novo</b>.</p></div>
   <div class="wrap">
-    <p class="eyb">Da Criação ao Apocalipse</p>
-    <h2>As histórias que marcaram gerações — contadas para o seu filho</h2>
-    <p>Noé e a arca, Davi e Golias, Jonas e o grande peixe, o nascimento de Jesus, a multiplicação dos pães… São <b>200 histórias</b>, em ordem, para a criança conhecer a Bíblia inteira.</p>
     <div class="gallery">
-      <figure><img src="img/svg/davi.svg" alt="Davi enfrentando Golias" loading="lazy" width="300" height="260"><figcaption>Davi e Golias<small>1 Samuel 17</small></figcaption></figure>
-      <figure><img src="img/svg/jonas.svg" alt="O grande peixe de Jonas" loading="lazy" width="300" height="260"><figcaption>Jonas e o grande peixe<small>Jonas 1–2</small></figcaption></figure>
-      <figure><img src="img/svg/belem.svg" alt="A estrela sobre a manjedoura" loading="lazy" width="300" height="260"><figcaption>Jesus nasce em Belém<small>Lucas 2</small></figcaption></figure>
-      <figure><img src="img/svg/paes.svg" alt="Cesto com cinco pães e dois peixes" loading="lazy" width="300" height="260"><figcaption>Cinco pães e dois peixes<small>João 6</small></figcaption></figure>
-      <figure><img src="img/svg/leao.svg" alt="Leão manso" loading="lazy" width="300" height="260"><figcaption>Daniel na cova dos leões<small>Daniel 6</small></figcaption></figure>
-      <figure><img src="img/svg/ovelhas.svg" alt="Ovelhas e cajado do pastor" loading="lazy" width="300" height="260"><figcaption>A ovelha perdida<small>Lucas 15</small></figcaption></figure>
+      <figure style="--r:-2deg"><img src="img/svg/davi.svg" alt="Davi enfrentando Golias" loading="lazy" width="300" height="260"><figcaption>Davi e Golias<small>1 Samuel 17</small></figcaption></figure>
+      <figure style="--r:1.5deg"><img src="img/svg/jonas.svg" alt="O grande peixe de Jonas" loading="lazy" width="300" height="260"><figcaption>Jonas e o grande peixe<small>Jonas 1–2</small></figcaption></figure>
+      <figure style="--r:-1deg"><img src="img/svg/belem.svg" alt="A estrela sobre a manjedoura" loading="lazy" width="300" height="260"><figcaption>Jesus nasce em Belém<small>Lucas 2</small></figcaption></figure>
+      <figure style="--r:2deg"><img src="img/svg/paes.svg" alt="Cesto com pães e peixes" loading="lazy" width="300" height="260"><figcaption>Cinco pães e dois peixes<small>João 6</small></figcaption></figure>
+      <figure style="--r:-1.5deg"><img src="img/svg/leao.svg" alt="Leão manso" loading="lazy" width="300" height="260"><figcaption>Daniel na cova dos leões<small>Daniel 6</small></figcaption></figure>
+      <figure style="--r:1deg"><img src="img/svg/ovelhas.svg" alt="Ovelhas e cajado" loading="lazy" width="300" height="260"><figcaption>A ovelha perdida<small>Lucas 15</small></figcaption></figure>
     </div>
   </div>
+  <div class="marq" aria-hidden="true"><div class="track"><span class="chip c1">Deus cria o mundo</span><span class="chip c1">O jardim do Éden</span><span class="chip c1">A primeira desobediência</span><span class="chip c1">Caim e Abel</span><span class="chip c1">Noé constrói a arca</span><span class="chip c1">Os bichos entram na arca</span><span class="chip c1">O dilúvio e o arco-íris</span><span class="chip c1">A Torre de Babel</span><span class="chip c1">Deus chama Abraão</span><span class="chip c1">Abraão e Ló dividem a terra</span><span class="chip c1">Conte as estrelas</span><span class="chip c1">Os três visitantes</span><span class="chip c1">Nasce Isaque</span><span class="chip c1">Abraão confia no monte</span><span class="chip c1">Rebeca no poço</span><span class="chip c1">Esaú e Jacó</span><span class="chip c1">A escada de Jacó</span><span class="chip c1">Jacó trabalha por Raquel</span><span class="chip c1">Jacó e Esaú fazem as pazes</span><span class="chip c1">José e a túnica colorida</span><span class="chip c1">José é vendido</span><span class="chip c1">José na casa de Potifar</span><span class="chip c1">José na prisão</span><span class="chip c1">Os sonhos do faraó</span><span class="chip c1">José governa o Egito</span><span class="chip c1">Os irmãos de José chegam ao Egito</span><span class="chip c1">José perdoa os irmãos</span><span class="chip c1">O bebê no cesto</span><span class="chip c1">A sarça que pegava fogo</span><span class="chip c1">Moisés diante do faraó</span><span class="chip c1">As pragas do Egito</span><span class="chip c1">A primeira Páscoa</span><span class="chip c1">O mar se abre</span><span class="chip c1">Pão que cai do céu</span><span class="chip c1">Água da rocha</span><span class="chip c1">Os Dez Mandamentos</span><span class="chip c1">O bezerro de ouro</span><span class="chip c1">A tenda do encontro</span><span class="chip c1">Os doze espias</span><span class="chip c1">A serpente de bronze</span><span class="chip c1">A jumenta que falou</span><span class="chip c1">Josué, o novo líder</span><span class="chip c1">Raabe e os espias</span><span class="chip c1">O rio Jordão para</span><span class="chip c1">As muralhas de Jericó</span><span class="chip c1">O dia em que o sol parou</span><span class="chip c1">Débora, a juíza sábia</span><span class="chip c1">Gideão e a lã</span><span class="chip c1">Gideão e os 300</span><span class="chip c1">Sansão, o homem forte</span><span class="chip c1">Sansão e Dalila</span><span class="chip c1">Rute e Noemi</span><span class="chip c1">Rute no campo de Boaz</span><span class="chip c1">Ana ora por um filho</span><span class="chip c1">Deus chama Samuel</span><span class="chip c1">Deus cria o mundo</span><span class="chip c1">O jardim do Éden</span><span class="chip c1">A primeira desobediência</span><span class="chip c1">Caim e Abel</span><span class="chip c1">Noé constrói a arca</span><span class="chip c1">Os bichos entram na arca</span><span class="chip c1">O dilúvio e o arco-íris</span><span class="chip c1">A Torre de Babel</span><span class="chip c1">Deus chama Abraão</span><span class="chip c1">Abraão e Ló dividem a terra</span><span class="chip c1">Conte as estrelas</span><span class="chip c1">Os três visitantes</span><span class="chip c1">Nasce Isaque</span><span class="chip c1">Abraão confia no monte</span><span class="chip c1">Rebeca no poço</span><span class="chip c1">Esaú e Jacó</span><span class="chip c1">A escada de Jacó</span><span class="chip c1">Jacó trabalha por Raquel</span><span class="chip c1">Jacó e Esaú fazem as pazes</span><span class="chip c1">José e a túnica colorida</span><span class="chip c1">José é vendido</span><span class="chip c1">José na casa de Potifar</span><span class="chip c1">José na prisão</span><span class="chip c1">Os sonhos do faraó</span><span class="chip c1">José governa o Egito</span><span class="chip c1">Os irmãos de José chegam ao Egito</span><span class="chip c1">José perdoa os irmãos</span><span class="chip c1">O bebê no cesto</span><span class="chip c1">A sarça que pegava fogo</span><span class="chip c1">Moisés diante do faraó</span><span class="chip c1">As pragas do Egito</span><span class="chip c1">A primeira Páscoa</span><span class="chip c1">O mar se abre</span><span class="chip c1">Pão que cai do céu</span><span class="chip c1">Água da rocha</span><span class="chip c1">Os Dez Mandamentos</span><span class="chip c1">O bezerro de ouro</span><span class="chip c1">A tenda do encontro</span><span class="chip c1">Os doze espias</span><span class="chip c1">A serpente de bronze</span><span class="chip c1">A jumenta que falou</span><span class="chip c1">Josué, o novo líder</span><span class="chip c1">Raabe e os espias</span><span class="chip c1">O rio Jordão para</span><span class="chip c1">As muralhas de Jericó</span><span class="chip c1">O dia em que o sol parou</span><span class="chip c1">Débora, a juíza sábia</span><span class="chip c1">Gideão e a lã</span><span class="chip c1">Gideão e os 300</span><span class="chip c1">Sansão, o homem forte</span><span class="chip c1">Sansão e Dalila</span><span class="chip c1">Rute e Noemi</span><span class="chip c1">Rute no campo de Boaz</span><span class="chip c1">Ana ora por um filho</span><span class="chip c1">Deus chama Samuel</span></div><div class="track rev"><span class="chip c2">O anjo visita Zacarias</span><span class="chip c2">O anjo visita Maria</span><span class="chip c2">Maria visita Isabel</span><span class="chip c2">Nasce João Batista</span><span class="chip c2">O sonho de José</span><span class="chip c2">Jesus nasce em Belém</span><span class="chip c2">Os pastores e os anjos</span><span class="chip c2">Simeão e Ana no templo</span><span class="chip c2">Os magos e a estrela</span><span class="chip c2">A fuga para o Egito</span><span class="chip c2">Jesus menino no templo</span><span class="chip c2">João Batista no deserto</span><span class="chip c2">O batismo de Jesus</span><span class="chip c2">Jesus no deserto</span><span class="chip c2">Os primeiros discípulos</span><span class="chip c2">A pesca maravilhosa</span><span class="chip c2">A água que virou vinho</span><span class="chip c2">Nicodemos visita Jesus à noite</span><span class="chip c2">A mulher no poço</span><span class="chip c2">O filho do oficial é curado</span><span class="chip c2">Os amigos pelo telhado</span><span class="chip c2">Jesus chama Mateus</span><span class="chip c2">Felizes os que…</span><span class="chip c2">Sal da terra e luz do mundo</span><span class="chip c2">Jesus ensina a orar</span><span class="chip c2">Os passarinhos e as flores</span><span class="chip c2">A casa na rocha</span><span class="chip c2">Jesus acalma a tempestade</span><span class="chip c2">A filha de Jairo</span><span class="chip c2">A mulher que tocou o manto</span><span class="chip c2">Cinco pães e dois peixes</span><span class="chip c2">Jesus anda sobre as águas</span><span class="chip c2">Pedro anda sobre as águas</span><span class="chip c2">O semeador</span><span class="chip c2">A semente de mostarda</span><span class="chip c2">O tesouro escondido</span><span class="chip c2">A ovelha perdida</span><span class="chip c2">A moeda perdida</span><span class="chip c2">O filho que voltou para casa</span><span class="chip c2">O bom samaritano</span><span class="chip c2">Marta e Maria</span><span class="chip c2">O amigo à meia-noite</span><span class="chip c2">O rico que só pensava em si</span><span class="chip c2">Os dez leprosos</span><span class="chip c2">Duas orações no templo</span><span class="chip c2">O povo pede um rei</span><span class="chip c2">Saul, o primeiro rei</span><span class="chip c2">Samuel unge Davi</span><span class="chip c2">Davi, o pastor corajoso</span><span class="chip c2">Davi toca para o rei</span><span class="chip c2">Davi e Golias</span><span class="chip c2">Davi e Jônatas, grandes amigos</span><span class="chip c2">Davi poupa Saul</span><span class="chip c2">Davi e Mefibosete</span><span class="chip c2">Davi dança de alegria</span><span class="chip c2">Salomão pede sabedoria</span><span class="chip c2">Salomão e as duas mães</span><span class="chip c2">Salomão constrói o templo</span><span class="chip c2">A visita da rainha</span><span class="chip c2">Elias e os corvos</span><span class="chip c2">Elias e a viúva</span><span class="chip c2">Fogo do céu no monte Carmelo</span><span class="chip c2">Elias e a voz suave</span><span class="chip c2">O carro de fogo</span><span class="chip c2">O azeite da viúva</span><span class="chip c2">O anjo visita Zacarias</span><span class="chip c2">O anjo visita Maria</span><span class="chip c2">Maria visita Isabel</span><span class="chip c2">Nasce João Batista</span><span class="chip c2">O sonho de José</span><span class="chip c2">Jesus nasce em Belém</span><span class="chip c2">Os pastores e os anjos</span><span class="chip c2">Simeão e Ana no templo</span><span class="chip c2">Os magos e a estrela</span><span class="chip c2">A fuga para o Egito</span><span class="chip c2">Jesus menino no templo</span><span class="chip c2">João Batista no deserto</span><span class="chip c2">O batismo de Jesus</span><span class="chip c2">Jesus no deserto</span><span class="chip c2">Os primeiros discípulos</span><span class="chip c2">A pesca maravilhosa</span><span class="chip c2">A água que virou vinho</span><span class="chip c2">Nicodemos visita Jesus à noite</span><span class="chip c2">A mulher no poço</span><span class="chip c2">O filho do oficial é curado</span><span class="chip c2">Os amigos pelo telhado</span><span class="chip c2">Jesus chama Mateus</span><span class="chip c2">Felizes os que…</span><span class="chip c2">Sal da terra e luz do mundo</span><span class="chip c2">Jesus ensina a orar</span><span class="chip c2">Os passarinhos e as flores</span><span class="chip c2">A casa na rocha</span><span class="chip c2">Jesus acalma a tempestade</span><span class="chip c2">A filha de Jairo</span><span class="chip c2">A mulher que tocou o manto</span><span class="chip c2">Cinco pães e dois peixes</span><span class="chip c2">Jesus anda sobre as águas</span><span class="chip c2">Pedro anda sobre as águas</span><span class="chip c2">O semeador</span><span class="chip c2">A semente de mostarda</span><span class="chip c2">O tesouro escondido</span><span class="chip c2">A ovelha perdida</span><span class="chip c2">A moeda perdida</span><span class="chip c2">O filho que voltou para casa</span><span class="chip c2">O bom samaritano</span><span class="chip c2">Marta e Maria</span><span class="chip c2">O amigo à meia-noite</span><span class="chip c2">O rico que só pensava em si</span><span class="chip c2">Os dez leprosos</span><span class="chip c2">Duas orações no templo</span><span class="chip c2">O povo pede um rei</span><span class="chip c2">Saul, o primeiro rei</span><span class="chip c2">Samuel unge Davi</span><span class="chip c2">Davi, o pastor corajoso</span><span class="chip c2">Davi toca para o rei</span><span class="chip c2">Davi e Golias</span><span class="chip c2">Davi e Jônatas, grandes amigos</span><span class="chip c2">Davi poupa Saul</span><span class="chip c2">Davi e Mefibosete</span><span class="chip c2">Davi dança de alegria</span><span class="chip c2">Salomão pede sabedoria</span><span class="chip c2">Salomão e as duas mães</span><span class="chip c2">Salomão constrói o templo</span><span class="chip c2">A visita da rainha</span><span class="chip c2">Elias e os corvos</span><span class="chip c2">Elias e a viúva</span><span class="chip c2">Fogo do céu no monte Carmelo</span><span class="chip c2">Elias e a voz suave</span><span class="chip c2">O carro de fogo</span><span class="chip c2">O azeite da viúva</span></div></div>
+  <p class="c" style="margin-top:14px;font-weight:800;color:#1f4f73">…e mais 188 histórias esperando o seu filho ⛵</p>
 </section>
+<svg class="wv" style="background:#DFF2FB" viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true"><path d="M0 40 C240 90 480 0 720 36 C960 72 1200 10 1440 44 V80 H0Z" fill="#FFFBF2"/></svg>
 
-<!-- 4. AMOSTRA REAL -->
-<section>
+<!-- AMOSTRA -->
+<section style="padding-top:20px">
+  <div class="wrap c"><span class="eyb">Veja por dentro</span><h2>Cada história já vem pronta. Você só abre e lê.</h2></div>
   <div class="wrap">
-    <p class="eyb">Veja por dentro</p>
-    <h2>Cada história já vem pronta. Você só abre e lê.</h2>
-    <p>História, lição, 3 perguntas, oração e desafio — tudo num cartão só. Da Criação ao Apocalipse, em ordem: <b>110 histórias do Antigo Testamento e 90 do Novo</b>.</p>
-    <div class="figure"><img src="img/cartao-paes.jpg" alt="Cartão Cinco pães e dois peixes" loading="lazy" width="794" height="561"></div>
-    <p class="cap">Cartão real do kit: 2 histórias por folha A4, prontas para recortar.</p>
+    <div class="sample">
+      <img class="card" src="img/cartao-davi.jpg" alt="Cartão completo de Davi e Golias" loading="lazy" width="794" height="561">
+      <ul class="anat">
+        <li><i>🎨</i><div><b>Ilustração</b><span>Um desenho para a criança olhar enquanto ouve.</span></div></li>
+        <li><i>📖</i><div><b>História curtinha</b><span>Contada do jeito que criança entende, em uns 2 minutos.</span></div></li>
+        <li><i>💡</i><div><b>Lição</b><span>Uma frase para guardar no coração.</span></div></li>
+        <li><i>💬</i><div><b>3 perguntas</b><span>Para conversar e saber o que ela entendeu.</span></div></li>
+        <li><i>🙏</i><div><b>Oração + desafio do dia</b><span>Para orar juntos e viver a lição na prática.</span></div></li>
+      </ul>
+    </div>
+    <p class="c" style="font-size:14px;color:var(--soft);font-weight:700;margin-top:14px">Cartão real do kit · 2 histórias por folha A4, com linha de corte</p>
   </div>
 </section>
 
-<!-- 5. SEM IMPRESSORA -->
-<section class="alt">
+<!-- CELULAR -->
+<svg class="wv" style="background:#FFFBF2" viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true"><path d="M0 40 C240 90 480 0 720 36 C960 72 1200 10 1440 44 V80 H0Z" fill="#E8F6E1"/></svg>
+<section class="bg-green" style="padding-top:30px">
   <div class="wrap">
-    <div class="two" style="align-items:center">
+    <div class="phone-row">
       <div>
-        <p class="eyb">Não tem impressora?</p>
+        <span class="eyb g">Não tem impressora?</span>
         <h2>Funciona direto no celular ou no tablet</h2>
-        <p>Além da versão para imprimir, você recebe uma <b>versão para tela</b>: uma história por página, em letra grande, para ler no sofá, no carro ou na hora de dormir.</p>
-        <p>Sorteie um número de 1 a 200 e abra — simples assim.</p>
+        <p style="font-weight:600">Além da versão para imprimir, você recebe uma <b>versão para tela</b>: uma história por página, em letra grande, para ler no sofá, no carro ou na hora de dormir.</p>
+        <p style="font-weight:600">Sorteie um número de 1 a 200 e abra — simples assim. 📱</p>
       </div>
-      <img src="img/celular.jpg" alt="História Jesus acalma a tempestade na tela do celular" loading="lazy" style="max-width:300px;margin:0 auto;border-radius:16px" width="520" height="820">
+      <img src="img/celular.jpg" alt="História de Jonas na tela do celular" loading="lazy" width="520" height="820">
+    </div>
+  </div>
+</section>
+<svg class="wv" style="background:#E8F6E1" viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true"><path d="M0 40 C240 90 480 0 720 36 C960 72 1200 10 1440 44 V80 H0Z" fill="#2E3A6B"/></svg>
+
+<!-- PARA QUEM -->
+<section class="bg-night" style="padding-top:30px">
+  <div class="wrap c">
+    <span class="eyb">Para quem é</span>
+    <h2>Feito para quem quer plantar a fé nas crianças</h2>
+    <div class="who">
+      <div><i>👨‍👩‍👧</i>Pais e mães<span>que querem um momento diário com os filhos</span></div>
+      <div><i>👵</i>Avós e padrinhos<span>que querem deixar um legado de fé</span></div>
+      <div><i>⛪</i>Escola bíblica<span>aula pronta: história, perguntas e oração</span></div>
+      <div><i>🏠</i>Famílias grandes<span>os maiores leem, os menores escolhem</span></div>
+    </div>
+  </div>
+</section>
+<svg class="wv" style="background:#2E3A6B" viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true"><path d="M0 40 C240 90 480 0 720 36 C960 72 1200 10 1440 44 V80 H0Z" fill="#FFFBF2"/></svg>
+
+<!-- BÔNUS -->
+<section style="padding-top:20px">
+  <div class="wrap c"><span class="eyb p">Presente para você</span><h2>Bônus: Guia da Arca para os Pais</h2></div>
+  <div class="wrap narrow" style="max-width:880px">
+    <div class="bonus">
+      <img src="img/bonus-capa.jpg" alt="Capa do Guia da Arca para os Pais" loading="lazy" width="496" height="702">
+      <div>
+        <p style="font-weight:700">Tudo o que você precisa para transformar as histórias em hábito:</p>
+        <ul>
+          <li>🃏 O ritual “1, 2 ou 3?” passo a passo</li>
+          <li>📅 Plano de 30 dias com as histórias mais amadas</li>
+          <li>💡 Dicas para a vida real (criança agitada, irmãos de idades diferentes…)</li>
+          <li>🎨 Trilha da Arca: 200 bolinhas para pintar</li>
+          <li>🏅 Certificado “Pequeno Tripulante da Arca”</li>
+        </ul>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- 6. O QUE RECEBE -->
-<section>
+<!-- OFERTA -->
+<svg class="wv" style="background:#FFFBF2" viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true"><path d="M0 40 C240 90 480 0 720 36 C960 72 1200 10 1440 44 V80 H0Z" fill="#FFF2D6"/></svg>
+<section class="bg-cream" id="oferta" style="padding-top:30px">
+  <div class="wrap c"><span class="eyb r">Comece hoje</span><h2>Leve a Arca das Histórias para casa</h2></div>
   <div class="wrap">
-    <p class="eyb">Tudo o que você recebe</p>
-    <h2>200 momentos de fé em família</h2>
-    <ul class="list">
-      <li><div class="ic">📖</div><div><b>200 histórias bíblicas ilustradas</b><span class="t">Da Criação à Nova Jerusalém, contadas para crianças de 4 a 9 anos.</span></div></li>
-      <li><div class="ic">💬</div><div><b>600 perguntas para conversar</b><span class="t">3 por história, para a criança pensar, falar e lembrar.</span></div></li>
-      <li><div class="ic">🙏</div><div><b>200 orações curtinhas e 200 desafios do dia</b><span class="t">Para a fé sair do papel e ir para a vida.</span></div></li>
-      <li><div class="ic">✂️</div><div><b>Versão para imprimir</b><span class="t">2 cartões por folha A4, com linha de corte.</span></div></li>
-      <li><div class="ic">📱</div><div><b>Versão para celular e tablet</b><span class="t">Uma história por página, sem precisar imprimir nada.</span></div></li>
-      <li><div class="ic">🎁</div><div><b>Bônus: Guia da Arca para os Pais</b><span class="t">O ritual “1, 2 ou 3?” passo a passo, plano de 30 dias, dicas para a vida real, trilha das 200 histórias para pintar e certificado de conclusão.</span></div></li>
-    </ul>
-  </div>
-</section>
-
-<!-- 7. OBJEÇÕES -->
-<section class="alt">
-  <div class="wrap">
-    <p class="eyb">Para qualquer família</p>
-    <h2>Feito para a vida real</h2>
-    <div class="two">
-      <div class="box"><h3>“Não sei ensinar a Bíblia.”</h3><p>Não precisa. Se você sabe ler, você sabe usar. As perguntas e a oração já estão prontas.</p></div>
-      <div class="box"><h3>“Meu filho não para quieto.”</h3><p>São 2 minutos de história. E é ele quem escolhe o cartão — isso muda tudo.</p></div>
-      <div class="box"><h3>“Somos de igrejas diferentes.”</h3><p>As histórias seguem o texto bíblico, com linguagem cristã neutra, sem doutrina de denominação específica.</p></div>
-      <div class="box"><h3>“Tenho filhos de idades diferentes.”</h3><p>Os maiores leem em voz alta, os menores escolhem e respondem. Todo mundo participa.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- 8. OFERTA -->
-<section id="oferta">
-  <div class="wrap">
-    <p class="eyb" style="text-align:center">Comece hoje</p>
-    <h2 style="text-align:center">Arca das Histórias — kit completo</h2>
     <div class="offer">
-      <img src="img/svg/logo.svg" alt="" width="220" height="170" style="width:150px;margin:-6px auto 4px">
+      <div class="ribbon">⭐ KIT COMPLETO + BÔNUS</div>
+      <img src="img/svg/logo.svg" alt="" width="220" height="170" style="width:150px;margin:6px auto 0">
       <ul>
         <li>200 histórias bíblicas ilustradas (para imprimir)</li>
         <li>Versão para celular e tablet</li>
         <li>200 lições · 600 perguntas · 200 orações · 200 desafios</li>
         <li>Acesso imediato na área de membros</li>
       </ul>
-      <div class="bonus">🎁 <b>Bônus:</b> Guia da Arca para os Pais (ritual, plano de 30 dias, trilha para pintar e certificado)</div>
-      <div class="price" style="text-align:center">
+      <div class="bon">🎁 <b>Bônus:</b> Guia da Arca para os Pais — ritual, plano de 30 dias, trilha para pintar e certificado</div>
+      <div class="pp">
         <div class="por">R$ 27,90</div>
-        <small>pagamento único no Pix ou cartão · sem mensalidade</small>
+        <small>pagamento único · sem mensalidade</small>
+        <span class="per">💡 menos de R$ 0,14 por história</span>
       </div>
-      <a class="btn cta" href="#" data-checkout>QUERO COMEÇAR HOJE</a>
-      <div class="trust"><span>Compra segura</span><span>Acesso por e-mail</span><span>Garantia de 7 dias</span></div>
+      <a class="btn" href="#" data-checkout>QUERO COMEÇAR HOJE<small>acesso imediato no seu e-mail</small></a>
+      <div class="pay"><span>Pix</span><span>Cartão de crédito</span><span>Compra segura</span></div>
     </div>
-
     <div class="guar">
-      <div class="seal">7<small>DIAS</small></div>
-      <div><b>Garantia incondicional de 7 dias</b><p style="color:var(--soft);font-size:15.5px">Leia as histórias com seu filho. Se em até 7 dias você achar que não é para a sua família, peça o reembolso pela própria plataforma de pagamento e devolvemos 100% do valor.</p></div>
+      <div class="seal"><b>7</b><small>DIAS</small></div>
+      <div><h3>Garantia incondicional de 7 dias</h3><p style="color:var(--soft);font-weight:600;font-size:15.5px">Leia as histórias com seu filho. Se em até 7 dias você achar que não é para a sua família, peça o reembolso pela própria plataforma de pagamento e devolvemos 100% do valor.</p></div>
     </div>
   </div>
 </section>
+<svg class="wv" style="background:#FFF2D6" viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true"><path d="M0 40 C240 90 480 0 720 36 C960 72 1200 10 1440 44 V80 H0Z" fill="#FFFBF2"/></svg>
 
-<!-- 9. FAQ -->
-<section class="alt">
-  <div class="wrap">
-    <p class="eyb">Perguntas frequentes</p>
-    <h2>Ficou alguma dúvida?</h2>
-    <details><summary>Como recebo o material?</summary><p>Logo após a confirmação do pagamento, você recebe por e-mail o acesso à área de membros, onde estão todos os arquivos para baixar.</p></details>
+<!-- FAQ -->
+<section style="padding-top:20px">
+  <div class="wrap narrow">
+    <div class="c"><span class="eyb b">Perguntas frequentes</span><h2>Ficou alguma dúvida?</h2></div>
+    <details><summary>Como recebo o material?</summary><p>Logo após a confirmação do pagamento, você recebe por e-mail o acesso à área de membros, com todos os arquivos para baixar.</p></details>
     <details><summary>É um produto físico?</summary><p>Não. É um material digital em PDF: você imprime em casa (ou numa gráfica) ou lê direto no celular/tablet.</p></details>
     <details><summary>Para qual idade é indicado?</summary><p>De 4 a 9 anos. Para os menores, você lê; os maiores já conseguem ler sozinhos e responder às perguntas.</p></details>
     <details><summary>Preciso imprimir tudo?</summary><p>Não. Você pode imprimir aos poucos ou usar só a versão para celular.</p></details>
+    <details><summary>É de alguma igreja específica?</summary><p>Não. As histórias seguem o texto bíblico, com linguagem cristã neutra, para famílias de qualquer denominação.</p></details>
     <details><summary>Serve para igreja ou escola bíblica?</summary><p>Sim. Cada cartão vira uma aula pronta: história, perguntas para a turma, oração e desafio.</p></details>
     <details><summary>Tem mensalidade?</summary><p>Não. Você paga uma vez só e o acesso é seu.</p></details>
     <details><summary>E se eu não gostar?</summary><p>Você tem 7 dias de garantia. É só pedir o reembolso pela plataforma de pagamento.</p></details>
   </div>
 </section>
 
-<section>
-  <div class="wrap" style="text-align:center">
-    <img src="img/svg/logo.svg" alt="" width="220" height="170" style="width:170px;margin:0 auto 10px">
+<section class="c" style="padding-top:10px">
+  <div class="wrap narrow">
+    <img src="img/svg/hero.svg" alt="" width="760" height="420" style="border-radius:26px;margin:0 auto 18px;max-width:520px;width:100%">
     <h2>A primeira história pode começar ainda hoje.</h2>
-    <p style="color:var(--soft)">Separe 3 cartões, pergunte “1, 2 ou 3?” e veja o que acontece.</p>
-    <a class="btn cta" href="#" data-checkout>QUERO A ARCA DAS HISTÓRIAS</a>
+    <p style="color:var(--soft);font-weight:700">Separe 3 cartões, pergunte “1, 2 ou 3?” e veja o brilho nos olhos do seu filho.</p>
+    <a class="btn" href="#" data-checkout style="margin-left:auto;margin-right:auto">QUERO A ARCA DAS HISTÓRIAS<small>R$ 27,90 · acesso imediato</small></a>
   </div>
 </section>
 
+<svg class="wv" style="background:#FFFBF2" viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true"><path d="M0 40 C240 90 480 0 720 36 C960 72 1200 10 1440 44 V80 H0Z" fill="#2E3A6B"/></svg>
 <footer>
   <div class="wrap">
     <p>Arca das Histórias · Histórias bíblicas para crianças</p>
@@ -291,7 +404,6 @@ footer p+p{margin-top:6px}
 <div class="sticky" id="sticky"><div class="p">R$ 27,90<small>pagamento único</small></div><a href="#" data-checkout>QUERO AGORA</a></div>
 
 <script>
-// Link do checkout (Cakto) — preenchido quando o produto for criado
 var CHECKOUT_URL = "";
 var TRACK = ['utm_source','utm_medium','utm_campaign','utm_content','utm_term','src','sck','xcod','fbclid'];
 function trackingParams(){
@@ -309,8 +421,7 @@ function goCheckout(e){
   location.href = u.toString();
 }
 document.querySelectorAll('[data-checkout]').forEach(function(a){ a.addEventListener('click', goCheckout); });
-document.querySelectorAll('a.cta:not([data-checkout])').forEach(function(a){ a.addEventListener('click', function(e){ e.preventDefault(); document.getElementById('oferta').scrollIntoView({behavior:'smooth'}); }); });
-// barra fixa no celular depois do primeiro botão
+document.querySelectorAll('a.cta').forEach(function(a){ a.addEventListener('click', function(e){ e.preventDefault(); document.getElementById('oferta').scrollIntoView({behavior:'smooth'}); }); });
 var st=document.getElementById('sticky'), hero=document.querySelector('.hero .btn');
 new IntersectionObserver(function(en){ st.classList.toggle('on', !en[0].isIntersecting && en[0].boundingClientRect.top<0); }).observe(hero);
 </script>
